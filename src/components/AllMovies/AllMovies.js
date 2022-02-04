@@ -1,5 +1,5 @@
 import React from 'react';
-import '../MovieCard/MovieCard.js'
+import MovieCard from '../MovieCard/MovieCard'
 
 const AllMovies = ({movies}) => {
   const movieCards = movies.map(movie => {
@@ -12,6 +12,12 @@ const AllMovies = ({movies}) => {
       />
     )
   })
+
+  return(
+    <div>
+      {movieCards}
+    </div>
+  )
 }
 
 export default AllMovies;
