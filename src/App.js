@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Navbar from './components/Navbar/Navbar';
 import AllMovies from './components/AllMovies/AllMovies';
 import SingleMovie from './components/SingleMovie/SingleMovie';
 import movieData from './movieData'
@@ -30,6 +31,9 @@ class App extends Component {
   render() {
     return (
       <main>
+        <Navbar
+          selectedMovie={this.state.selectedMovie}
+          clearSelection={this.clearSelection}/>
         {!this.state.selectedMovie && <AllMovies
             movies={this.state.movies}
             selectMovie={this.selectMovie}/>
