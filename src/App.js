@@ -11,9 +11,12 @@ class App extends Component {
   }
 
   render() {
-    <h1>Our app is working!</h1>
+    return (
+      <main>
+        <h1>This is our beautiful app!</h1>
+      </main>
+    )
   }
-
 }
 
 export default App;
