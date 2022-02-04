@@ -1,5 +1,6 @@
 import React from 'react';
-import MovieCard from '../MovieCard/MovieCard'
+import MovieCard from '../MovieCard/MovieCard';
+import './AllMovies.css'
 
 const AllMovies = ({movies}) => {
   const movieCards = movies.map(movie => {
@@ -14,7 +15,7 @@ const AllMovies = ({movies}) => {
   })
 
   return(
-    <div>
+    <div className='all-movies'>
       {movieCards}
     </div>
   )
