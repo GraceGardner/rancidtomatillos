@@ -9,14 +9,7 @@ class App extends Component {
     super()
     this.state = {
       movies: [],
-      selectedMovie: {
-        "id": 694919,
-        "poster_path": "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
-        "backdrop_path": "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg",
-        "title": "Money Plane",
-        "average_rating": 6.666666666666667,
-        "release_date": "2020-09-29"
-      }
+      selectedMovie: null
     }
   }
 
@@ -37,12 +30,16 @@ class App extends Component {
   render() {
     return (
       <main>
-        <SingleMovie movie={this.state.selectedMovie}/>
+        {!this.state.selectedMovie && <AllMovies
+            movies={this.state.movies}
+            selectMovie={this.selectMovie}/>
+        }
+        {this.state.selectedMovie && <SingleMovie
+          movie={this.state.selectedMovie}/>
+        }
       </main>
     )
   }
 }
 
 export default App;
-
-// <AllMovies movies={this.state.movies} selectMovie={this.selectMovie}/>
