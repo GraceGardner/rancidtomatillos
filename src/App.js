@@ -1,5 +1,7 @@
-import './App.css';
 import React, {Component} from 'react';
+import AllMovies from './components/AllMovies/AllMovies';
+import movieData from './movieData'
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -10,10 +12,14 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    this.setState({movies: movieData.movies});
+  }
+
   render() {
     return (
       <main>
-        <h1>This is our beautiful app!</h1>
+        <AllMovies movies={this.state.movies}/>
       </main>
     )
   }
