@@ -3,10 +3,13 @@ import './MovieCard.css';
 
 const MovieCard = ({image, title, id}) => {
   return (
-    <div className='card' id={id}>
-      <img className='card-image' src={image} />
+    <button
+      className='card'
+      id={id}
+      onClick={() => console.log("I did a thing")}>
+      <img className='card-image' src={image} alt={title + ' cover'}/>
       <h2>{title}</h2>
-    </div>
+    </button>
   )
 }
 
