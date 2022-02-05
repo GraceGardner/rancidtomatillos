@@ -13,8 +13,8 @@ const SingleMovie = ({movie}) => {
           <p>Rating: {movie.average_rating.toFixed(1)}</p>
           <p>Release Date: {movie.release_date}</p>
           <p>Runtime: {movie.runtime} minutes</p>
-          <p>Budget: {movie.budget}</p>
-          <p>Revenue: {movie.revenue}</p>
+          <p>Budget: ${movie.budget}</p>
+          <p>Revenue: ${movie.revenue}</p>
         </div>
         <p>{movie.overview}</p>
       </div>
