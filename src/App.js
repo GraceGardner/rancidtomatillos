@@ -34,19 +34,26 @@ class App extends Component {
   }
 
   render() {
+    const navbar = <Navbar
+      selectedMovie={this.state.selectedMovie}
+      clearSelection={this.clearSelection}/>
+
+    const allMovies = !this.state.selectedMovie && <AllMovies
+        movies={this.state.movies}
+        selectMovie={this.selectMovie}/>
+
+    const singleMovie = this.state.selectedMovie && <SingleMovie
+      movie={this.state.selectedMovie}/>
+
+    const errorModal = this.state.error && <ErrorModal
+      error={this.state.error}/>
+
     return (
       <main>
-        <Navbar
-          selectedMovie={this.state.selectedMovie}
-          clearSelection={this.clearSelection}/>
-        {!this.state.selectedMovie && <AllMovies
-            movies={this.state.movies}
-            selectMovie={this.selectMovie}/>
-        }
-        {this.state.selectedMovie && <SingleMovie
-          movie={this.state.selectedMovie}/>
-        }
-        {this.state.error && <ErrorModal error={this.state.error}/>}
+        {navbar}
+        {allMovies}
+        {singleMovie}
+        {errorModal}
       </main>
     )
   }
