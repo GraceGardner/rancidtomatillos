@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Navbar from './components/Navbar/Navbar';
 import AllMovies from './components/AllMovies/AllMovies';
 import SingleMovie from './components/SingleMovie/SingleMovie';
+import ErrorModal from './components/ErrorModal/ErrorModal';
 import api from './apiCalls';
 import './App.css';
 
@@ -43,7 +44,7 @@ class App extends Component {
         {this.state.selectedMovie && <SingleMovie
           movie={this.state.selectedMovie}/>
         }
-        {this.state.error && <h2>{this.state.error}</h2>}
+        {this.state.error && <ErrorModal error={this.state.error}/>}
       </main>
     )
   }

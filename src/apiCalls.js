@@ -2,7 +2,7 @@ const api = {
 
 
   get(path) {
-    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${path}`)
+    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${path}jkj`)
       .then(response => {
         if (!response.ok) {
           throw `${response.status} ${response.statusText}`
