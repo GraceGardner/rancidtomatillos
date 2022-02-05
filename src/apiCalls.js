@@ -1,16 +1,19 @@
 const api = {
 
-  get(data) {
-    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${data}`)
-      .then(response => response.json())
-  },
 
-  // movies = get('movies');
+  get(path) {
+    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${path}`)
+      .then(response => {
+        if (!response.ok) {
+          throw `${response.status} ${response.statusText}`
+        }
+        response.json()
+      })
+  },
 
   getSingleMovie(id) {
     return api.get(`movies/${id}`)
   }
-
 
 }
 
