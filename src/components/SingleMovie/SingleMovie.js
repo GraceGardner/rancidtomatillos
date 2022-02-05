@@ -9,7 +9,7 @@ const SingleMovie = ({movie}) => {
       <img src={movie.backdrop_path} alt={movie.title + ' cover'}/>
       <div className='details-row'>
         <div className='movie-datails'>
-          <p>Genre: {movie.genres}</p>
+          <p>Genre: {movie.genres.join(', ')}</p>
           <p>Rating: {movie.average_rating.toFixed(1)}</p>
           <p>Release Date: {movie.release_date}</p>
           <p>Runtime: {movie.runtime} minutes</p>
