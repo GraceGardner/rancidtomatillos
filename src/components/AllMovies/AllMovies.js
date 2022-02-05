@@ -6,18 +6,18 @@ const AllMovies = ({movies, selectMovie}) => {
   const movieCards = movies.map(movie => {
     return (
       <MovieCard
-        image={movie.poster_path}
-        title={movie.title}
-        id={movie.id}
-        key={movie.id}
-        selectMovie={selectMovie}
+      image={movie.poster_path}
+      title={movie.title}
+      id={movie.id}
+      key={movie.id}
+      selectMovie={selectMovie}
       />
     )
   })
 
   return(
     <div className='all-movies'>
-      {movieCards}
+    {movieCards}
     </div>
   )
 }

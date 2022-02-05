@@ -17,7 +17,9 @@ class App extends Component {
 
   componentDidMount = () => {
     api.get('movies')
-    .then(data => this.setState({movies: data.movies}))
+    .then(data => {
+      this.setState({movies: data.movies})
+    })
     .catch(error => this.setState({error: error}))
   }
 

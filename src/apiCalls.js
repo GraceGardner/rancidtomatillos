@@ -2,12 +2,12 @@ const api = {
 
 
   get(path) {
-    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${path}jkj`)
+    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${path}`)
       .then(response => {
         if (!response.ok) {
-          throw `${response.status} ${response.statusText}`
+          throw (`${response.status} ${response.statusText}. Please reload the page and try again!`);
         }
-        response.json()
+        return response.json()
       })
   },
 
