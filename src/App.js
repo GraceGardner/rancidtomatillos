@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import Navbar from './components/Navbar/Navbar';
 import AllMovies from './components/AllMovies/AllMovies';
 import SingleMovie from './components/SingleMovie/SingleMovie';
-import movieData from './movieData'
+import ErrorModal from './components/ErrorModal/ErrorModal';
+import api from './apiCalls';
 import './App.css';
 
 class App extends Component {
@@ -15,13 +16,15 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    this.setState({movies: movieData.movies});
+    api.get('movies')
+    .then(data => this.setState({movies: data.movies}))
+    .catch(error => this.setState({error: error}))
   }
 
   selectMovie = (id) => {
-    const movie = this.state.movies.find(movie => movie.id === id);
-    this.setState({selectedMovie: movie})
-    console.log(this.state.selectedMovie)
+    api.getSingleMovie(id)
+    .then(data => this.setState({selectedMovie: data.movie}))
+    .catch(error => this.setState({error: error}))
   }
 
   clearSelection = () => {
@@ -41,6 +44,7 @@ class App extends Component {
         {this.state.selectedMovie && <SingleMovie
           movie={this.state.selectedMovie}/>
         }
+        {this.state.error && <ErrorModal error={this.state.error}/>}
       </main>
     )
   }
