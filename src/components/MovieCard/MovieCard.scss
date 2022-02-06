@@ -19,10 +19,13 @@
   border: none;
   border-radius: 10px;
   @include box-shadow();
+  transition: all .1s ease-in-out;
 }
 
 .card:hover {
   cursor: pointer;
+  transform: scale(1.05);
+  @include box-shadow-hover();
 }
 
 .card-image {
