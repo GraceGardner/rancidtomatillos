@@ -1,20 +1,60 @@
 @import '../../styles/_variables';
 @import '../../styles/_mixins';
 
-.card {
-  box-sizing: border-box;
-  border: 3px solid black;
-  padding: 10px;
+.card-container {
+  border: none;
   height: auto;
-  width: 85%;
+  width: 90%;
   place-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $green;
+  border-radius: 10px;
+}
+
+.card {
+  width: 100%;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  @include box-shadow();
+  transition: all .1s ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  @include box-shadow-hover();
 }
 
 .card-image {
-  height: auto;
-  width: 90%;
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.title {
+  height: 60px;
+  min-width: 100%;
+  margin-top: 15px;
+  padding-left: 30px;
+  font-size: 24px;
+  color: $white;
+}
+
+.rating {
+  min-width: 100%;
+  margin-top: 30px;
+  padding-left: 30px;
+  font-size: 20px;
+  color: $white;
+}
+
+.tomatillo {
+  height: 20px;
+  width: auto;
+  margin-right: 15px;
 }
