@@ -3,11 +3,30 @@
 
 nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  border-bottom: 1px solid $teal;
+  margin: 0 20px 20px 20px;
+}
+
+h1 {
+  font-weight: 700;
+  color: $white;
+  font-size: 60px;
+  margin-left: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
 .home-button {
   margin: 20px;
+}
+
+.logo {
+  height: 80px;
+  padding-bottom: 15px;
+  margin: 15px;
 }
