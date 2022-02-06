@@ -2,33 +2,40 @@
 @import '../../styles/_mixins';
 
 .card-container {
-  // box-sizing: border-box;
   border: none;
   height: auto;
-  width: 100%;
+  width: 90%;
   place-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 10px;
+}
 
-  border-radius: 15px;
+.card {
+  width: 100%;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
   @include box-shadow();
 }
 
-button {
-  width: 100%;
-  background-color: transparent;
+.card:hover {
+  cursor: pointer;
 }
 
 .card-image {
+  display: block;
   height: 100%;
   width: 100%;
-  // border-radius: 15px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .card-text {
   height: 60px;
-  font-size: 20px;
+  font-size: 24px;
   color: $white;
-  padding: 10px;
+  margin-top: 20px;
 }
