@@ -1,2 +1,80 @@
 @import '../../styles/_variables';
 @import '../../styles/_mixins';
+
+.single-movie-container {
+  margin-left: 10%;
+  color: $white;
+
+  p {
+    line-height: 140%;
+    font-size: 18px;
+  }
+}
+
+.single-movie-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 16% 1% 0;
+}
+
+.header-details {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.movie-title {
+  font-size: 50px;
+  margin-bottom: 2.5%;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.runtime-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.side-img {
+  width: 22.5%;
+  height: auto;
+  margin-right: .25%;
+  @include box-shadow();
+}
+
+.backdrop-img {
+  width: 62%;
+  @include box-shadow();
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 15%;
+  margin-top: 1%;
+  padding-top: 1%;
+  border-top: 1px solid rgba(0, 159, 152, .5);
+}
+
+.movie-details {
+  width: 30%;
+}
+
+.movie-overview {
+  width: 70%;
+}

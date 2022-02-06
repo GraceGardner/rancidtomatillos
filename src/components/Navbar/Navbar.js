@@ -8,7 +8,7 @@ const Navbar = ({selectedMovie, clearSelection}) => {
       <div className='logo-container'>
         <img
           className='logo'
-          src={tomatillo} />
+          src={tomatillo} alt='tomitillo'/>
         <h1>Rancid Tomatillos</h1>
       </div>
       {selectedMovie && <button
