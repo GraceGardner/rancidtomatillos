@@ -1,6 +1,7 @@
 import './MovieCard.scss';
+import tomatillo from '../../assets/tomatillo.svg';
 
-const MovieCard = ({image, title, id, selectMovie}) => {
+const MovieCard = ({image, title, id, selectMovie, rating}) => {
   return (
     <div className='card-container'>
       <div
@@ -11,7 +12,13 @@ const MovieCard = ({image, title, id, selectMovie}) => {
         role='button'>
         <img className='card-image' src={image} alt={title + ' cover'}/>
       </div>
-      <h3 className='card-text'>{title}</h3>
+        <p className='rating'>
+          <img
+            className='tomatillo'
+            src={tomatillo}/>
+          {rating.toFixed(1)}
+        </p>
+        <h3 className='title'>{title}</h3>
     </div>
   )
 }

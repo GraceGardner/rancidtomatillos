@@ -11,6 +11,7 @@ const AllMovies = ({movies, selectMovie}) => {
       id={movie.id}
       key={movie.id}
       selectMovie={selectMovie}
+      rating={movie.average_rating}
       />
     )
   })
