@@ -1,5 +1,5 @@
 import React from 'react';
-import './ErrorModal.css';
+import './ErrorModal.scss';
 
 const ErrorModal = ({error}) => {
   return(
