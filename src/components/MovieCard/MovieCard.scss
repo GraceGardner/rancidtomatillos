@@ -1,20 +1,34 @@
 @import '../../styles/_variables';
 @import '../../styles/_mixins';
 
-.card {
-  box-sizing: border-box;
-  border: 3px solid black;
-  padding: 10px;
+.card-container {
+  // box-sizing: border-box;
+  border: none;
   height: auto;
-  width: 85%;
+  width: 100%;
   place-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $green;
+
+  border-radius: 15px;
+  @include box-shadow();
+}
+
+button {
+  width: 100%;
+  background-color: transparent;
 }
 
 .card-image {
-  height: auto;
-  width: 90%;
+  height: 100%;
+  width: 100%;
+  // border-radius: 15px;
+}
+
+.card-text {
+  height: 60px;
+  font-size: 20px;
+  color: $white;
+  padding: 10px;
 }
