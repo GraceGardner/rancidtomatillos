@@ -7,7 +7,7 @@ const SingleMovie = ({movie}) => {
       <header className='single-movie-header'>
       <div className='title-container'>
         <h2 className='movie-title'>{movie.title}</h2>
-        <h3>{movie.tagline}</h3>
+        <p>{movie.tagline}</p>
       </div>
       <div className='header-details'>
         <div className='runtime-container'>
@@ -26,12 +26,12 @@ const SingleMovie = ({movie}) => {
       </div>
       <div className='details-row'>
         <div className='movie-datails'>
-          <p>Genre: {movie.genres.join(', ')}</p>
-          <p>Release Date: {movie.release_date}</p>
-          <p>Budget: ${movie.budget}</p>
-          <p>Revenue: ${movie.revenue}</p>
+          <p><span className='bold-text'>Genre:</span> {movie.genres.join(', ')}</p>
+          <p><span className='bold-text'>Release Date:</span> {movie.release_date}</p>
+          <p><span className='bold-text'>Budget:</span> ${movie.budget}</p>
+          <p><span className='bold-text'>Revenue:</span> ${movie.revenue}</p>
         </div>
-        <p>{movie.overview}</p>
+        <p className='movie-overview'>{movie.overview}</p>
       </div>
     </div>
   )

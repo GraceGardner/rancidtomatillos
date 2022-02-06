@@ -4,6 +4,11 @@
 .single-movie-container {
   margin-left: 10%;
   color: $white;
+
+  p {
+    line-height: 140%;
+    font-size: 18px;
+  }
 }
 
 .single-movie-header {
@@ -23,8 +28,8 @@
 }
 
 .movie-title {
-  font-family: 'Roboto';
   font-size: 50px;
+  margin-bottom: 2.5%;
 }
 
 .rating-container {
@@ -49,10 +54,12 @@
   width: 22.5%;
   height: auto;
   margin-right: .25%;
+  @include box-shadow();
 }
 
 .backdrop-img {
   width: 62%;
+  @include box-shadow();
 }
 
 .details-row {
@@ -61,9 +68,13 @@
   margin-right: 15%;
   margin-top: 1%;
   padding-top: 1%;
-  border-top: solid rgba(0, 159, 152, .5);
+  border-top: 1px solid rgba(0, 159, 152, .5);
 }
 
 .movie-details {
-  min-width: 28%
+  width: 30%;
+}
+
+.movie-overview {
+  width: 70%;
 }
