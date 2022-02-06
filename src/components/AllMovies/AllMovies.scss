@@ -2,6 +2,8 @@
 @import '../../styles/_mixins';
 
 .all-movies {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
   padding: 20px;
   display: grid;
   grid-template-rows: auto;
