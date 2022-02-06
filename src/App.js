@@ -4,7 +4,7 @@ import AllMovies from './components/AllMovies/AllMovies';
 import SingleMovie from './components/SingleMovie/SingleMovie';
 import ErrorModal from './components/ErrorModal/ErrorModal';
 import api from './apiCalls';
-import './App.css';
+import './styles/App.scss';
 
 class App extends Component {
   constructor() {
