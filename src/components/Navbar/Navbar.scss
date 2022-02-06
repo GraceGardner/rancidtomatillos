@@ -23,6 +23,19 @@ h1 {
 
 .home-button {
   margin: 20px;
+  background-color: $teal;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-weight: 600;
+  color: $white;
+  font-size: 18px;
+  @include box-shadow();
+}
+
+.home-button:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .logo {
