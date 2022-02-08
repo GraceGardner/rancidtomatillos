@@ -16,6 +16,14 @@ const cleanData = (movie) => {
   return movie
 }
 
+const cleanAllData = (movies) => {
+  return movies.filter(movie => {
+    if(movie.poster_path && movie.title && movie.average_rating){
+      return movie
+    }
+  })
+}
+
 
 const api = {
 
@@ -36,6 +44,13 @@ const api = {
       return cleanData(data.movie)
     })
   },
+
+  getAllMovies() {
+    return api.get('movies')
+    .then(data => {
+      return cleanAllData(data.movies)
+    })
+  }
 
 };
 
