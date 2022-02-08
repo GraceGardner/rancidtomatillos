@@ -1,7 +1,6 @@
 const cleanData = (movie) => {
   let keys = Object.keys(movie)
   keys.forEach(key => {
-    console.log(movie[key])
     if(!movie[key] && movie[key] !== movie.tagline && movie[key] !== movie.description) {
       movie[key] = 'not available'
     } else if (!movie[key] && movie[key] === movie.overview) {
@@ -10,11 +9,10 @@ const cleanData = (movie) => {
       movie[key] = `$ ${movie[key]}`
     } else if (movie[key] === movie.runtime) {
       movie[key] = `${movie[key]} minutes`
-    } else if (movie[key] === [] && movie[key] === movie.genres) {
+    } else if (movie[key] === movie.genres && movie.genres.length === 0) {
       movie.genres.push('not available')
     }
   })
-  console.log(movie)
   return movie
 }
 

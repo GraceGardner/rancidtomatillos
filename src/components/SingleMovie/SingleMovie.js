@@ -12,7 +12,7 @@ const SingleMovie = ({movie}) => {
       <div className='header-details'>
         <div className='runtime-container'>
           <p className='bold-text'>Runtime:</p>
-          <p>{movie.runtime} minutes</p>
+          <p>{movie.runtime}</p>
         </div>
         <div className='rating-container'>
           <p className='bold-text'>Rating:</p>
