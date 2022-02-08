@@ -2,6 +2,7 @@ import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './AllMovies.scss'
 
+
 const AllMovies = ({movies, selectMovie}) => {
   const movieCards = movies.map(movie => {
     return (

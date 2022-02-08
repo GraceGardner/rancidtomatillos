@@ -28,8 +28,8 @@ const SingleMovie = ({movie}) => {
         <div className='movie-datails'>
           <p><span className='bold-text'>Genre:</span> {movie.genres.join(', ')}</p>
           <p><span className='bold-text'>Release Date:</span> {movie.release_date}</p>
-          <p><span className='bold-text'>Budget:</span> ${movie.budget}</p>
-          <p><span className='bold-text'>Revenue:</span> ${movie.revenue}</p>
+          <p><span className='bold-text'>Budget:</span> {movie.budget}</p>
+          <p><span className='bold-text'>Revenue:</span> {movie.revenue}</p>
         </div>
         <p className='movie-overview'>{movie.overview}</p>
       </div>
