@@ -25,7 +25,7 @@ class App extends Component {
 
   selectMovie = (id) => {
     api.getSingleMovie(id)
-    .then(data => this.setState({selectedMovie: data.movie}))
+    .then(data => this.setState({selectedMovie: data}))
     .catch(error => this.setState({error: error}))
   }
 
