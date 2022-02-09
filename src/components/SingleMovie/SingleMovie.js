@@ -25,7 +25,7 @@ const SingleMovie = ({movie}) => {
         <img className='backdrop-img' src={movie.backdrop_path} alt={movie.title + ' backdrop image'}/>
       </div>
       <div className='details-row'>
-        <div className='movie-datails'>
+        <div className='movie-details'>
           <p><span className='bold-text'>Genre:</span> {movie.genres.join(', ')}</p>
           <p><span className='bold-text'>Release Date:</span> {movie.release_date}</p>
           <p><span className='bold-text'>Budget:</span> ${movie.budget}</p>
