@@ -7,12 +7,12 @@ const AllMovies = ({movies, selectMovie}) => {
   const movieCards = movies.map(movie => {
     return (
       <MovieCard
-      image={movie.poster_path}
-      title={movie.title}
-      id={movie.id}
-      key={movie.id}
-      selectMovie={selectMovie}
-      rating={movie.average_rating}
+        image={movie.poster_path}
+        title={movie.title}
+        id={movie.id}
+        key={movie.id}
+        selectMovie={selectMovie}
+        rating={movie.average_rating}
       />
     )
   })
