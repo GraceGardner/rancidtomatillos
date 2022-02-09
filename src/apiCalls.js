@@ -1,6 +1,6 @@
 const formatDate = (date) => {
-  let [year, month, day] = date.split('-')
-  return [month, day, year].join('-')
+  let [year, month, day] = date.split('-');
+  return [month, day, year].join('-');
 }
 
 const formatNumber = (num) => {
@@ -10,7 +10,8 @@ const formatNumber = (num) => {
 }
 
 const cleanData = (movie) => {
-  let keys = Object.keys(movie)
+  let keys = Object.keys(movie);
+
   keys.forEach(key => {
     if(!movie[key] && movie[key] !== movie.tagline && movie[key] !== movie.description) {
       movie[key] = 'not available'
@@ -23,16 +24,17 @@ const cleanData = (movie) => {
     } else if (movie[key] === movie.genres && movie.genres.length === 0) {
       movie.genres.push('not available')
     }
-  })
-  movie.genres = movie.genres.join(', ')
+  });
+
+  movie.genres = movie.genres.join(', ');
   movie.average_rating = movie.average_rating.toFixed(1);
   movie.release_date = formatDate(movie.release_date);
-  return movie
+  return movie;
 }
 
 const cleanAllData = (movies) => {
   return movies.filter(movie => {
-    if(movie.poster_path && movie.title && movie.average_rating){
+    if(movie.poster_path && movie.title && movie.average_rating && movie.id){
       return movie
     }
   })

@@ -20,7 +20,10 @@ class App extends Component {
     .then(data => {
       this.setState({movies: data})
     })
-    .catch(error => this.setState({error: error}))
+    .catch(error => {
+      console.log(error)
+      this.setState({error: error})
+    })
   }
 
   selectMovie = (id) => {
