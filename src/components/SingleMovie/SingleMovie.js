@@ -1,5 +1,6 @@
 import React from 'react';
 import './SingleMovie.scss';
+import tomatillo from '../../assets/tomatillo.svg'
 
 const SingleMovie = ({movie}) => {
   return (
@@ -12,11 +13,12 @@ const SingleMovie = ({movie}) => {
       <div className='header-details'>
         <div className='runtime-container'>
           <p className='bold-text'>Runtime:</p>
-          <p>{movie.runtime} minutes</p>
+          <p>{movie.runtime}</p>
         </div>
         <div className='rating-container'>
           <p className='bold-text'>Rating:</p>
-          <p>{movie.average_rating.toFixed(1)}</p>
+          <img className='sm-logo' src={tomatillo} alt='tomitillo'/>
+          <p>{movie.average_rating}</p>
         </div>
       </div>
       </header>
@@ -26,10 +28,10 @@ const SingleMovie = ({movie}) => {
       </div>
       <div className='details-row'>
         <div className='movie-details'>
-          <p><span className='bold-text'>Genre:</span> {movie.genres.join(', ')}</p>
+          <p><span className='bold-text'>Genre:</span> {movie.genres}</p>
           <p><span className='bold-text'>Release Date:</span> {movie.release_date}</p>
-          <p><span className='bold-text'>Budget:</span> ${movie.budget}</p>
-          <p><span className='bold-text'>Revenue:</span> ${movie.revenue}</p>
+          <p><span className='bold-text'>Budget:</span> {movie.budget}</p>
+          <p><span className='bold-text'>Revenue:</span> {movie.revenue}</p>
         </div>
         <p className='movie-overview'>{movie.overview}</p>
       </div>

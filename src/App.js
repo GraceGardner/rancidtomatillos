@@ -16,16 +16,16 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    api.get('movies')
+    api.getAllMovies('movies')
     .then(data => {
-      this.setState({movies: data.movies})
+      this.setState({movies: data})
     })
     .catch(error => this.setState({error: error}))
   }
 
   selectMovie = (id) => {
     api.getSingleMovie(id)
-    .then(data => this.setState({selectedMovie: data.movie}))
+    .then(data => this.setState({selectedMovie: data}))
     .catch(error => this.setState({error: error}))
   }
 
