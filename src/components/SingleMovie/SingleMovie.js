@@ -1,5 +1,6 @@
 import React from 'react';
 import './SingleMovie.scss';
+import tomatillo from '../../assets/tomatillo.svg'
 
 const SingleMovie = ({movie}) => {
   return (
@@ -16,6 +17,7 @@ const SingleMovie = ({movie}) => {
         </div>
         <div className='rating-container'>
           <p className='bold-text'>Rating:</p>
+          <img className='sm-logo' src={tomatillo} alt='tomitillo'/>
           <p>{movie.average_rating}</p>
         </div>
       </div>

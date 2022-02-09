@@ -24,6 +24,7 @@ const cleanData = (movie) => {
       movie.genres.push('not available')
     }
   })
+  movie.genres = movie.genres.join(', ')
   movie.average_rating = movie.average_rating.toFixed(1);
   movie.release_date = formatDate(movie.release_date);
   return movie
