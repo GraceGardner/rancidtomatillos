@@ -9,6 +9,11 @@ describe('rancid tomatillos landing page', () => {
       .contains('Rancid Tomatillos')
   })
 
+  it('should not have a home button in the the nav bar', () => {
+    cy.get('nav > button')
+      .should('not.exist')
+  })
+
   it('should have 40 movie cards', () => {
     cy.get('.all-movies')
       .find('.card-container')
@@ -22,5 +27,5 @@ describe('rancid tomatillos landing page', () => {
       .siblings('.rating')
       .siblings('.card')
       .children('.card-image')
-  })  
+  })
 })
