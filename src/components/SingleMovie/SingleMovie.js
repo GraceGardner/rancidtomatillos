@@ -12,7 +12,7 @@ const SingleMovie = ({movie}) => {
       <div className='header-details'>
         <div className='runtime-container'>
           <p className='bold-text'>Runtime:</p>
-          <p>{movie.runtime} minutes</p>
+          <p>{movie.runtime}</p>
         </div>
         <div className='rating-container'>
           <p className='bold-text'>Rating:</p>
@@ -28,8 +28,8 @@ const SingleMovie = ({movie}) => {
         <div className='movie-datails'>
           <p><span className='bold-text'>Genre:</span> {movie.genres.join(', ')}</p>
           <p><span className='bold-text'>Release Date:</span> {movie.release_date}</p>
-          <p><span className='bold-text'>Budget:</span> ${movie.budget}</p>
-          <p><span className='bold-text'>Revenue:</span> ${movie.revenue}</p>
+          <p><span className='bold-text'>Budget:</span> {movie.budget}</p>
+          <p><span className='bold-text'>Revenue:</span> {movie.revenue}</p>
         </div>
         <p className='movie-overview'>{movie.overview}</p>
       </div>

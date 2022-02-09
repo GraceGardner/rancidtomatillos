@@ -22,5 +22,5 @@ describe('rancid tomatillos landing page', () => {
       .siblings('.rating')
       .siblings('.card')
       .children('.card-image')
-  })  
+  })
 })
