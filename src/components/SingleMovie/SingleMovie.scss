@@ -10,6 +10,11 @@
     font-size: 18px;
   }
 }
+.sm-logo {
+  width: 20px;
+  margin-left: 20%;
+  margin-right: 6%;
+}
 
 .single-movie-header {
   display: flex;
@@ -19,8 +24,9 @@
 
 .header-details {
   display: flex;
-  justify-content: space-between;
-  width: 15%;
+  justify-content: space-around;
+  width: 20%;
+  flex-direction: column;
 }
 
 .bold-text {
@@ -34,14 +40,14 @@
 
 .rating-container {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .runtime-container {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between
 }
 
 .image-container {
