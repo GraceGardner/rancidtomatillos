@@ -3,6 +3,12 @@ const formatDate = (date) => {
   return [month, day, year].join('-')
 }
 
+const formatNumber = (num) => {
+    var string = num.toString().split(".");
+    string[0] = string[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return string.join(".");
+}
+
 const cleanData = (movie) => {
   let keys = Object.keys(movie)
   keys.forEach(key => {
@@ -11,15 +17,15 @@ const cleanData = (movie) => {
     } else if (!movie[key] && movie[key] === movie.overview) {
       movie[key] = 'description unavailable'
     } else if (movie[key] === movie.budget || movie[key] === movie.revenue) {
-      movie[key] = `$ ${movie[key]}`
+      movie[key] = `$ ${formatNumber(movie[key])}`
     } else if (movie[key] === movie.runtime) {
       movie[key] = `${movie[key]} minutes`
     } else if (movie[key] === movie.genres && movie.genres.length === 0) {
       movie.genres.push('not available')
-    } else if (movie[key] === movie.release_date) {
-      movie[key] = formatDate(movie[key])
     }
   })
+  movie.average_rating = movie.average_rating.toFixed(1);
+  movie.release_date = formatDate(movie.release_date);
   return movie
 }
 
@@ -43,7 +49,6 @@ const api = {
         return response.json()
       })
   },
-
 
   getSingleMovie(id) {
     return api.get(`movies/${id}`)
