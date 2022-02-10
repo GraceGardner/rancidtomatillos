@@ -32,7 +32,6 @@ class AllMovies extends Component {
           title={movie.title}
           id={movie.id}
           key={movie.id}
-          // selectMovie={selectMovie}
           rating={movie.average_rating}
         />
       );

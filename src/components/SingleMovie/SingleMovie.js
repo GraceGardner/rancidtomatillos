@@ -25,8 +25,18 @@ class SingleMovie extends Component {
   }
 
   render() {
+    if (!this.state.movie) {
+      return null
+    }
+
     const movie = this.state.movie;
-    return (
+
+    const errorModal = this.state.error &&
+      <ErrorModal
+        error={this.state.error}
+      />
+
+    const movieContainer = !this.state.error &&
       <div>
         <Link to='/'>
           <button className='back-button'>&laquo; Back</button>
@@ -64,6 +74,12 @@ class SingleMovie extends Component {
           </div>
         </div>
       </div>
+
+    return (
+      <>
+        { movieContainer }
+        { errorModal }
+      </>
     )
   }
 }
