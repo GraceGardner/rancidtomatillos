@@ -1,6 +1,23 @@
 @import '../../styles/_variables';
 @import '../../styles/_mixins';
 
+.back-button {
+    margin: 10px 0 20px 30px;
+    background-color: $teal;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-weight: 600;
+    color: $white;
+    font-size: 14px;
+    @include box-shadow();
+}
+
+.back-button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
 .single-movie-container {
   margin-left: 10%;
   color: $white;
