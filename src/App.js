@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import AllMovies from './components/AllMovies/AllMovies';
 import SingleMovie from './components/SingleMovie/SingleMovie';
 import ErrorModal from './components/ErrorModal/ErrorModal';
+import { Route, Switch } from 'react-router-dom';
 import api from './apiCalls';
 import './styles/App.scss';
 
