@@ -10,12 +10,11 @@ class SingleMovie extends Component {
     super()
     this.state = {
       id: match.params.id,
-      movie: {}
+      movie: null
     }
   }
 
   componentDidMount = () => {
-    console.log(this.state.id)
     api.getSingleMovie(this.state.id)
       .then(data => this.setState({movie: data}))
       .catch(error => {
@@ -25,10 +24,6 @@ class SingleMovie extends Component {
   }
 
   render() {
-    if (!this.state.movie) {
-      return null
-    }
-
     const movie = this.state.movie;
 
     const errorModal = this.state.error &&
@@ -36,7 +31,7 @@ class SingleMovie extends Component {
         error={this.state.error}
       />
 
-    const movieContainer = !this.state.error &&
+    const movieContainer = movie &&
       <div>
         <Link to='/'>
           <button className='back-button'>&laquo; Back</button>
