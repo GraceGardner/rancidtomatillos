@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import tomatillo from '../../assets/tomatillo.svg';
 import './MovieCard.scss';
 
 const MovieCard = ({image, title, id, selectMovie, rating}) => {
   return (
     <div className='card-container'>
-      <Link to={`/${id}`}>
+      <NavLink to={`/${id}`}>
         <div>
           className='card'
           id={id}
@@ -14,7 +14,7 @@ const MovieCard = ({image, title, id, selectMovie, rating}) => {
           role='button'>
           <img className='card-image' src={image} alt={title + ' cover'}/>
         </div>
-      </Link>
+      </NavLink>
       <p className='rating'>
         <img
           className='tomatillo'

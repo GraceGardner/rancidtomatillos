@@ -5,15 +5,16 @@ import tomatillo from '../../assets/tomatillo.svg'
 import './SingleMovie.scss';
 
 class SingleMovie extends Component {
-  constructor(match) {
+  constructor({ match }) {
     super()
     this.state = {
-      id: match.param.id,
+      id: match.params.id,
       movie: {}
     }
   }
 
   componentDidMount = () => {
+    console.log(this.state.id)
     api.getSingleMovie(this.state.id)
       .then(data => this.setState({movie: data}))
       .catch(error => {

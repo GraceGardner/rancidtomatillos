@@ -11,7 +11,7 @@ const App = () => {
     <>
       <Navbar />
       <Switch>
-        <Route path='/' component={ AllMovies } />
+        <Route exact path='/' component={ AllMovies } />
         <Route path='/:id' component={ SingleMovie } />
       </Switch>
     </>
