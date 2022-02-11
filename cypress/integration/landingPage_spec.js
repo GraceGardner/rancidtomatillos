@@ -9,7 +9,7 @@ describe('rancid tomatillos landing page', () => {
   it('should have title in nav bar', () => {
     cy.get('nav')
       .find('h1')
-      .should('include.text', 'Rancid Tomatillos')
+      .should('have.text', 'Rancid Tomatillos')
   })
 
   it('should have a container with 16 movie cards', () => {
