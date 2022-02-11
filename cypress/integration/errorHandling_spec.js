@@ -25,7 +25,7 @@ describe('Error modal on landing page', () => {
   })
 
   it('should not show a movie card if data is missing', () => {
-    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies.json'})
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies-incomplete.json'})
 
     cy.visit('http://localhost:3000')
 
@@ -35,6 +35,6 @@ describe('Error modal on landing page', () => {
   })
 
   it('should handle missing data for single movie ', () => {
-    
+
   })
 })
