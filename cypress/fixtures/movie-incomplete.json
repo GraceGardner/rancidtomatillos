@@ -2,15 +2,15 @@
   "movie": {
     "id": 737173,
     "title": "Maratón After",
-    "poster_path": "https://image.tmdb.org/t/p/original//opZKcgocttEOAUzqluX3bUbbDew.jpg",
-    "backdrop_path": "https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg",
-    "release_date": "2020-09-03",
+    "poster_path": "https://image.tmdb.org/t/p/original//f4aul3FyD3jv3v4bul1IrkWZvzq.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original//xFxk4vnirOtUxpOEWgA1MCRfy6J.jpg",
+    "release_date": null,
     "overview": "",
     "genres": [],
     "budget": 0,
     "revenue": 0,
     "runtime": 0,
     "tagline": "",
-    "average_rating": 4.333333333333333
+    "average_rating": null
   }
 }

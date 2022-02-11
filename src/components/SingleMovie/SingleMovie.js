@@ -46,7 +46,7 @@ class SingleMovie extends Component {
           <header className='single-movie-header'>
           <div className='title-container'>
             <h2 className='movie-title'>{movie.title}</h2>
-            <p>{movie.tagline}</p>
+            <p className='movie-tagline'>{movie.tagline}</p>
           </div>
           <div className='header-details'>
             <div className='runtime-container'>
