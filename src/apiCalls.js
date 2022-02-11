@@ -23,6 +23,14 @@ const cleanData = (movie) => {
       movie[key] = `${movie[key]} minutes`
     } else if (movie[key] === movie.genres && movie.genres.length === 0) {
       movie.genres.push('not available')
+    } else if (movie[key] === movie.release_date && !movie.release_date){
+      movie.release_date = 'not available';
+    } else if (movie[key] === movie.average_rating && !movie.average_rating){
+      movie.average_rating = 'not available';
+    } else if (movie[key] === movie.poster_path && !movie.poster_path){
+      movie.poster_path = 'https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg';
+    } else if (movie[key] === movie.backdrop_path && !movie.backdrop_path){
+      movie.backdrop_path = 'https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg';
     }
   });
 

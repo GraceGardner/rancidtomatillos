@@ -8,8 +8,8 @@ describe('Error modal on landing page', () => {
     cy.visit('http://localhost:3000')
 
     cy.get('.error-modal > p')
-      .contains('500')
-      .contains('Please reload the page and try again!')
+      .should('include.text','500')
+      .should('include.text','Please reload the page and try again!')
   })
 
   it('should handle 404 errors', () => {
@@ -20,8 +20,8 @@ describe('Error modal on landing page', () => {
     cy.visit('http://localhost:3000')
 
     cy.get('.error-modal > p')
-      .contains('404')
-      .contains('Please reload the page and try again!')
+      .should('include.text','404')
+      .should('include.text','Please reload the page and try again!')
   })
 
   it('should not show a movie card if data is missing', () => {
@@ -36,5 +36,9 @@ describe('Error modal on landing page', () => {
 
   it('should handle missing data for single movie ', () => {
 
+  })
+
+  it('should show an error if movie is missing title', () => {
+    
   })
 })

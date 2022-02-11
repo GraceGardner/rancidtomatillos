@@ -16,7 +16,13 @@ class SingleMovie extends Component {
 
   componentDidMount = () => {
     api.getSingleMovie(this.state.id)
-      .then(data => this.setState({movie: data}))
+      .then(data => {
+        if(data.title) {
+          this.setState({movie: data})
+        } else {
+          throw 'Oh no! Looks like this was a rancid tomatillo.'
+        }
+      })
       .catch(error => {
         console.log(error)
         this.setState({error: error})
