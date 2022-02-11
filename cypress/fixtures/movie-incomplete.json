@@ -1,0 +1,16 @@
+{
+  "movie": {
+    "id": 737173,
+    "title": "Maratón After",
+    "poster_path": "https://image.tmdb.org/t/p/original//f4aul3FyD3jv3v4bul1IrkWZvzq.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original//xFxk4vnirOtUxpOEWgA1MCRfy6J.jpg",
+    "release_date": null,
+    "overview": "",
+    "genres": [],
+    "budget": 0,
+    "revenue": 0,
+    "runtime": 0,
+    "tagline": "",
+    "average_rating": null
+  }
+}

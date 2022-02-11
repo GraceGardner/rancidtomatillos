@@ -13,22 +13,33 @@ const cleanData = (movie) => {
   let keys = Object.keys(movie);
 
   keys.forEach(key => {
-    if(!movie[key] && movie[key] !== movie.tagline && movie[key] !== movie.description) {
-      movie[key] = 'not available'
-    } else if (!movie[key] && movie[key] === movie.overview) {
+    if (!movie[key] && movie[key] === movie.overview) {
       movie[key] = 'description unavailable'
+    } else if (movie[key] === movie.budget && !movie.budget){
+      movie.budget =  'not available'
+    } else if (movie[key] === movie.revenue && !movie.revenue){
+      movie.revenue =  'not available'
     } else if (movie[key] === movie.budget || movie[key] === movie.revenue) {
       movie[key] = `$ ${formatNumber(movie[key])}`
     } else if (movie[key] === movie.runtime) {
       movie[key] = `${movie[key]} minutes`
     } else if (movie[key] === movie.genres && movie.genres.length === 0) {
       movie.genres.push('not available')
+    } else if (movie[key] === movie.release_date && !movie.release_date){
+      movie.release_date = 'not available';
+    } else if (movie[key] === movie.release_date && movie.release_date){
+      movie.release_date = formatDate(movie.release_date);
+    } else if (movie[key] === movie.average_rating && movie.average_rating){
+      movie.average_rating = movie.average_rating.toFixed(1);
+    } else if (movie[key] === movie.average_rating && !movie.average_rating){
+      movie.average_rating = 'not available';
+    } else if (movie[key] === movie.poster_path && !movie.poster_path){
+      movie.poster_path = 'https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg';
+    } else if (movie[key] === movie.backdrop_path && !movie.backdrop_path){
+      movie.backdrop_path = 'https://www.esm.rochester.edu/uploads/NoPhotoAvailable.jpg';
     }
   });
-
   movie.genres = movie.genres.join(', ');
-  movie.average_rating = movie.average_rating.toFixed(1);
-  movie.release_date = formatDate(movie.release_date);
   return movie;
 }
 

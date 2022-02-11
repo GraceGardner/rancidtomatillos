@@ -16,7 +16,13 @@ class SingleMovie extends Component {
 
   componentDidMount = () => {
     api.getSingleMovie(this.state.id)
-      .then(data => this.setState({movie: data}))
+      .then(data => {
+        if(data.title) {
+          this.setState({movie: data})
+        } else {
+          throw 'Oh no! Looks like this was a rancid tomatillo.'
+        }
+      })
       .catch(error => {
         console.log(error)
         this.setState({error: error})
@@ -40,7 +46,7 @@ class SingleMovie extends Component {
           <header className='single-movie-header'>
           <div className='title-container'>
             <h2 className='movie-title'>{movie.title}</h2>
-            <p>{movie.tagline}</p>
+            <p className='movie-tagline'>{movie.tagline}</p>
           </div>
           <div className='header-details'>
             <div className='runtime-container'>
@@ -59,7 +65,7 @@ class SingleMovie extends Component {
             <img className='backdrop-img' src={movie.backdrop_path} alt={movie.title + ' backdrop image'}/>
           </div>
           <div className='details-row'>
-            <div className='movie-datails'>
+            <div className='movie-details'>
               <p><span className='bold-text'>Genre:</span> {movie.genres}</p>
               <p><span className='bold-text'>Release Date:</span> {movie.release_date}</p>
               <p><span className='bold-text'>Budget:</span> {movie.budget}</p>

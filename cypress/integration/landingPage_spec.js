@@ -1,31 +1,34 @@
 describe('rancid tomatillos landing page', () => {
 
   beforeEach(() => {
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies.json'})
+
     cy.visit('http://localhost:3000');
   })
 
   it('should have title in nav bar', () => {
     cy.get('nav')
-      .contains('Rancid Tomatillos')
+      .find('h1')
+      .should('have.text', 'Rancid Tomatillos')
   })
 
-  it('should not have a home button in the the nav bar', () => {
-    cy.get('nav > button')
-      .should('not.exist')
-  })
-
-  it('should have 40 movie cards', () => {
+  it('should have a container with 16 movie cards', () => {
     cy.get('.all-movies')
       .find('.card-container')
-      .should('have.length', 40)
+      .should('have.length', 16)
   })
 
-  it('should have a container with movie cards, with an image, title and rating', () => {
-    cy.get('.all-movies')
-      .children('.card-container')
-      .children('.title')
-      .siblings('.rating')
-      .siblings('.card')
-      .children('.card-image')
+  it('should have a movie card for each movie with an image, title and rating', () => {
+    cy.get('.card-container:first')
+      .find('.title')
+      .should('have.text', 'Money Plane')
+
+    cy.get('.card-container:first')
+      .find('.rating')
+      .should('have.text', '6.6')
+
+    cy.get('.card-container:first')
+      .find('.card-image')
+      .should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg')
   })
 })

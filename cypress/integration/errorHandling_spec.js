@@ -8,8 +8,8 @@ describe('Error modal on landing page', () => {
     cy.visit('http://localhost:3000')
 
     cy.get('.error-modal > p')
-      .contains('500')
-      .contains('Please reload the page and try again!')
+      .should('include.text','500')
+      .should('include.text','Please reload the page and try again!')
   })
 
   it('should handle 404 errors', () => {
@@ -20,12 +20,12 @@ describe('Error modal on landing page', () => {
     cy.visit('http://localhost:3000')
 
     cy.get('.error-modal > p')
-      .contains('404')
-      .contains('Please reload the page and try again!')
+      .should('include.text','404')
+      .should('include.text','Please reload the page and try again!')
   })
 
   it('should not show a movie card if data is missing', () => {
-    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies.json'})
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies-incomplete.json'})
 
     cy.visit('http://localhost:3000')
 
@@ -34,7 +34,28 @@ describe('Error modal on landing page', () => {
       .should('have.length', 3)
   })
 
-  it('should handle missing data for single movie ', () => {
-    
+  it.only('should handle missing data for single movie', () => {
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies/*', { fixture: 'movie-incomplete.json'})
+
+    cy.visit('http://localhost:3000')
+      .get('.card').first().click()
+    // 
+    // cy.get('.movie-tagline')
+    //   .should('not.exist')
+
+  })
+  // "poster_path": null,
+  // "backdrop_path": null,
+  // "release_date": null,
+  // "overview": "",
+  // "genres": [],
+  // "budget": 0,
+  // "revenue": 0,
+  // "runtime": 0,
+  // "tagline": "",
+  // "average_rating": null
+
+  it('should show an error if movie is missing title', () => {
+
   })
 })
