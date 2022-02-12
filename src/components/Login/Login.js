@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.scss';
 
-const Login = () => {
+const Login = ({ toggleLogin }) => {
   return(
     <div className='login-modal'>
       <form className='login-content'>

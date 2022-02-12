@@ -5,10 +5,18 @@
   @include modal();
 }
 
-.login-content{
+.login-content {
   @include modal-content();
 }
 
-.flex-row{
+.flex-row {
   display: flex;
+}
+
+.sign-in-button {
+  @include button();
+}
+
+.sign-in-button:hover {
+  @include button-hover();
 }

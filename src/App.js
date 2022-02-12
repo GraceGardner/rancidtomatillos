@@ -12,14 +12,37 @@ class App extends Component {
     super()
     this.state = {
       name: null,
-      id: null
+      id: null,
+      showLogin: false
     }
   }
 
+  toggleLogin() {
+    this.setState(prevState => ({
+      showLogin: !prevState.showLogin
+    }))
+  }
+
+  logoutUser() {
+    this.setState({
+      name: null,
+      id: null
+    })
+  }
+
   render() {
+
+    const loginModal = this.state.showLogin &&
+      <Login/>
+
     return (
       <>
-      <Navbar name={ this.state.name }/>
+      <Navbar
+        name={ this.state.name }
+        toggleLogin={ this.toggleLogin }
+        logoutUser={ this.logoutUser }
+      />
+      {loginModal}
       <Switch>
       <Route exact path='/' component={ AllMovies } />
       <Route path='/:id' component={ SingleMovie } />
