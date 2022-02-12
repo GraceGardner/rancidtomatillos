@@ -20,7 +20,7 @@ class AllMovies extends Component {
     })
     .catch(error => {
       console.log(error)
-      this.setState({error: error})
+      this.setState({error: error.message})
     })
   }
 

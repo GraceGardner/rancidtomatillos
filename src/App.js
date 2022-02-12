@@ -17,23 +17,34 @@ class App extends Component {
     }
   }
 
-  toggleLogin() {
+  toggleLogin = () => {
     this.setState(prevState => ({
       showLogin: !prevState.showLogin
     }))
   }
 
-  logoutUser() {
+  logoutUser = () => {
     this.setState({
       name: null,
       id: null
     })
   }
 
+  loginUser = (email, password) => {
+    api.postUser(email, password)
+    .then(response => {
+      this.setState({
+        name: response.user.name,
+        id: response.user.id
+      })
+    })
+    .catch(error => console.log(error))
+  }
+
   render() {
 
     const loginModal = this.state.showLogin &&
-      <Login/>
+      <Login loginUser={this.loginUser}/>
 
     return (
       <>

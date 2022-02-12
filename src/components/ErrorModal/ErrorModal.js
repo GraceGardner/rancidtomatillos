@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './ErrorModal.scss';
 
 const ErrorModal = ({error}) => {
+  console.log(typeof error)
   return(
     <div className='error-modal'>
       <p className='modal-content'>
