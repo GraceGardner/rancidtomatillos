@@ -84,6 +84,17 @@ const api = {
     .then(data => {
       return cleanAllData(data.movies)
     })
+  },
+
+  getUser(userEmail, userPassword) {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', {
+      method: 'post',
+      body: JSON.stringify({email: `${userEmail}`, password: `${userPassword}`}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
   }
 
 };
