@@ -1,0 +1,22 @@
+{
+  "movie": {
+    "id": 508439,
+    "title": null,
+    "poster_path": "https://image.tmdb.org/t/p/original//f4aul3FyD3jv3v4bul1IrkWZvzq.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original//xFxk4vnirOtUxpOEWgA1MCRfy6J.jpg",
+    "release_date": "2020-02-29",
+    "overview": "In a suburban fantasy world, two teenage elf brothers embark on an extraordinary quest to discover if there is still a little magic left out there.",
+    "genres": [
+    "Animation",
+    "Family",
+    "Adventure",
+    "Comedy",
+    "Fantasy"
+    ],
+    "budget": 200000000,
+    "revenue": 103181419,
+    "runtime": 102,
+    "tagline": "Their quest begineth.",
+    "average_rating": 6.4
+  }
+}
