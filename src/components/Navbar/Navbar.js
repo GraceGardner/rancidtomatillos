@@ -2,7 +2,11 @@ import React from 'react';
 import './Navbar.scss';
 import tomatillo from '../../assets/tomatillo.svg'
 
-const Navbar = () => {
+const Navbar = ({ name }) => {
+  const loginButton = !name && <button className='login-button'>LOGIN</button>
+  const logoutButton = name && <button className='logout-button'>LOGOUT</button>
+  const userName = name && <h2>name</h2>
+  
   return (
     <nav>
       <div className='logo-container'>
@@ -10,6 +14,11 @@ const Navbar = () => {
           className='logo'
           src={tomatillo} alt='tomitillo'/>
         <h1>Rancid Tomatillos</h1>
+      </div>
+      {loginButton}
+      <div className='logout'>
+        {userName}
+        {logoutButton}
       </div>
     </nav>
   )

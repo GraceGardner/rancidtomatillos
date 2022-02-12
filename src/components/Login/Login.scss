@@ -1,10 +1,14 @@
 @import '../../styles/_variables';
 @import '../../styles/_mixins';
 
-.error-modal {
-  @include modal()
+.login-modal {
+  @include modal();
 }
 
-.modal-content {
+.login-content{
   @include modal-content();
+}
+
+.flex-row{
+  display: flex;
 }
