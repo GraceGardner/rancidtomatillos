@@ -51,12 +51,12 @@ class SingleMovie extends Component {
           <div className='header-details'>
             <div className='runtime-container'>
               <p className='bold-text'>Runtime:</p>
-              <p>{movie.runtime}</p>
+              <p className='runtime'>{movie.runtime}</p>
             </div>
             <div className='rating-container'>
               <p className='bold-text'>Rating:</p>
               <img className='sm-logo' src={tomatillo} alt='tomitillo'/>
-              <p>{movie.average_rating}</p>
+              <p className='rating'>{movie.average_rating}</p>
             </div>
           </div>
           </header>
@@ -66,10 +66,10 @@ class SingleMovie extends Component {
           </div>
           <div className='details-row'>
             <div className='movie-details'>
-              <p><span className='bold-text'>Genre:</span> {movie.genres}</p>
-              <p><span className='bold-text'>Release Date:</span> {movie.release_date}</p>
-              <p><span className='bold-text'>Budget:</span> {movie.budget}</p>
-              <p><span className='bold-text'>Revenue:</span> {movie.revenue}</p>
+              <p className='genre'><span className='bold-text'>Genre:</span> {movie.genres}</p>
+              <p className='release-date'><span className='bold-text'>Release Date:</span> {movie.release_date}</p>
+              <p className='budget'><span className='bold-text'>Budget:</span> {movie.budget}</p>
+              <p className='revenue'><span className='bold-text'>Revenue:</span> {movie.revenue}</p>
             </div>
             <p className='movie-overview'>{movie.overview}</p>
           </div>
