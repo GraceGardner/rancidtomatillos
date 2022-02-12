@@ -25,9 +25,18 @@ class Login extends Component {
   }
 
   render() {
+
+    const errorMessage = this.props.errorMessage && <p className='error-message'>{this.props.errorMessage}</p>
+
     return(
       <div className='login-modal'>
         <form className='login-content'>
+          <button
+            className='close-button'
+            onClick={() => this.props.toggleLogin()}
+          >
+            X
+          </button>
           <div className='flex-row'>
             <label htmlFor='email'>Email:</label>
             <input
@@ -48,6 +57,7 @@ class Login extends Component {
               onChange={event => this.handleChange(event)}
             />
           </div>
+          {errorMessage}
           <button
             className='sign-in-button'
             onClick={event => this.signIn(event)}>Sign In

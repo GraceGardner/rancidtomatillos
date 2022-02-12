@@ -37,3 +37,8 @@ h1 {
 .logout-button:hover {
   @include button-hover();
 }
+
+.user-greeting {
+  color: $white;
+  font-size: 22px
+}

@@ -15,7 +15,7 @@ const Navbar = ({ name, toggleLogin, logoutUser }) => {
       onClick={() => logoutUser()}
     >LOGOUT</button>
 
-  const userName = name && <h2>name</h2>
+  const userName = name && <h2 className='user-greeting'>Hello, {name}!</h2>
 
   return (
     <nav>

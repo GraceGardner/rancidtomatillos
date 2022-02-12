@@ -13,7 +13,8 @@ class App extends Component {
     this.state = {
       name: null,
       id: null,
-      showLogin: false
+      showLogin: false,
+      errorMessage: null
     }
   }
 
@@ -33,10 +34,15 @@ class App extends Component {
   loginUser = (email, password) => {
     api.postUser(email, password)
     .then(response => {
-      this.setState({
+      if(response.error) {
+        this.setState({errorMessage: response.error})
+      } else {
+        this.setState({
         name: response.user.name,
-        id: response.user.id
-      })
+        id: response.user.id,
+        errorMessage: null,
+        showLogin: false
+      })}
     })
     .catch(error => console.log(error))
   }
@@ -44,7 +50,11 @@ class App extends Component {
   render() {
 
     const loginModal = this.state.showLogin &&
-      <Login loginUser={this.loginUser}/>
+      <Login
+        loginUser={this.loginUser}
+        errorMessage={this.state.errorMessage}
+        toggleLogin={ this.toggleLogin }
+      />
 
     return (
       <>
