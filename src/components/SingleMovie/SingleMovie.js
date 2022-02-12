@@ -20,12 +20,12 @@ class SingleMovie extends Component {
         if(data.title) {
           this.setState({movie: data})
         } else {
-          throw 'Oh no! Looks like this was a rancid tomatillo.'
+          throw new Error('Oh no! Looks like this was a rancid tomatillo.')
         }
       })
       .catch(error => {
         console.log(error)
-        this.setState({error: error})
+        this.setState({error: error.message})
       })
   }
 

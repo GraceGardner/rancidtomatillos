@@ -16,7 +16,8 @@ h1 {
   margin-left: 20px;
 }
 
-.logo-container {
+.logo-container,
+.logout {
   display: flex;
   align-items: center;
 }
@@ -25,4 +26,19 @@ h1 {
   height: 80px;
   padding-bottom: 15px;
   margin: 15px;
+}
+
+.login-button,
+.logout-button {
+  @include button();
+}
+
+.login-button:hover,
+.logout-button:hover {
+  @include button-hover();
+}
+
+.user-greeting {
+  color: $white;
+  font-size: 22px
 }

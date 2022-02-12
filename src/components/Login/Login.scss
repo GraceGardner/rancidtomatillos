@@ -1,0 +1,22 @@
+@import '../../styles/_variables';
+@import '../../styles/_mixins';
+
+.login-modal {
+  @include modal();
+}
+
+.login-content {
+  @include modal-content();
+}
+
+.flex-row {
+  display: flex;
+}
+
+.sign-in-button {
+  @include button();
+}
+
+.sign-in-button:hover {
+  @include button-hover();
+}

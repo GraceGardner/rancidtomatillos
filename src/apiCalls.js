@@ -48,9 +48,10 @@ const cleanData = (movie) => {
 
 const cleanAllData = (movies) => {
   return movies.filter(movie => {
-    if(movie.poster_path && movie.title && movie.average_rating && movie.id){
-      return movie
-    }
+    return movie.poster_path && movie.title && movie.average_rating && movie.id
+    // {
+    //   return movie
+    // }
   })
 }
 
@@ -61,11 +62,11 @@ const api = {
       .then(response => {
         if (!response.ok) {
           if (response.status >= 500) {
-            throw (`${response.status} ${response.statusText}. We're having some trouble loading the page. Please try again later!`);
+            throw new Error(`${response.status} ${response.statusText}. We're having some trouble loading the page. Please try again later!`);
           } else if (response.status === 404){
-            throw (`${response.status} ${response.statusText}. Oh no! Looks like this was a rancid tomatillo.`);
+            throw new Error(`${response.status} ${response.statusText}. Oh no! Looks like this was a rancid tomatillo.`);
           } else {
-            throw (`${response.status} ${response.statusText}. Oops! Something went wrong. Please reload the page and try agian.`);
+            throw new Error(`${response.status} ${response.statusText}. Oops! Something went wrong. Please reload the page and try agian.`);
           }
         }
         return response.json()
@@ -84,6 +85,17 @@ const api = {
     .then(data => {
       return cleanAllData(data.movies)
     })
+  },
+
+  postUser(userEmail, userPassword) {
+    return fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', {
+      method: 'post',
+      body: JSON.stringify({email: `${userEmail}`, password: `${userPassword}`}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
   }
 
 };
