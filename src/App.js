@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <>
-      <Navbar name={ name }/>
+      <Navbar name={ this.state.name }/>
       <Switch>
       <Route exact path='/' component={ AllMovies } />
       <Route path='/:id' component={ SingleMovie } />

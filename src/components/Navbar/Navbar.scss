@@ -27,3 +27,13 @@ h1 {
   padding-bottom: 15px;
   margin: 15px;
 }
+
+.login-button,
+.logout-button {
+  @include button();
+}
+
+.login-button:hover,
+.logout-button:hover {
+  @include button-hover();
+}
