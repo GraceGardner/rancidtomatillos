@@ -60,7 +60,13 @@ const api = {
     return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${path}`)
       .then(response => {
         if (!response.ok) {
-          throw (`${response.status} ${response.statusText}. Please reload the page and try again!`);
+          if (response.status >= 500) {
+            throw (`${response.status} ${response.statusText}. We're having some trouble loading the page. Please try again later!`);
+          } else if (response.status === 404){
+            throw (`${response.status} ${response.statusText}. Oh no! Looks like this was a rancid tomatillo.`);
+          } else {
+            throw (`${response.status} ${response.statusText}. Oops! Something went wrong. Please reload the page and try agian.`);
+          }
         }
         return response.json()
       })

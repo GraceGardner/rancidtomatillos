@@ -9,7 +9,7 @@ describe('Errors on landing page', () => {
 
     cy.get('.error-modal > p')
       .should('include.text','500')
-      .should('include.text','Please reload the page and try again!')
+      .should('include.text','We\'re having some trouble loading the page. Please try again later!')
   })
 
   it('should handle 404 errors', () => {
@@ -21,7 +21,23 @@ describe('Errors on landing page', () => {
 
     cy.get('.error-modal > p')
       .should('include.text','404')
-      .should('include.text','Please reload the page and try again!')
+      .should('include.text','Oh no! Looks like this was a rancid tomatillo.')
+      .get('a')
+      .should('include.text', 'Take me to the Rotten Tomatillos home page')
+  });
+
+  it('should handle 400 errors', () => {
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 401
+    })
+
+    cy.visit('http://localhost:3000')
+
+    cy.get('.error-modal > p')
+      .should('include.text','401')
+      .should('include.text','Oops! Something went wrong. Please reload the page and try agian.')
+      .get('a')
+      .should('include.text', 'Take me to the Rotten Tomatillos home page')
   });
 
   it('should not show a movie card if data is missing', () => {

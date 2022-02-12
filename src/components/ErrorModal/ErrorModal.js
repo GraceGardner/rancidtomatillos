@@ -7,7 +7,7 @@ const ErrorModal = ({error}) => {
     <div className='error-modal'>
       <p className='modal-content'>
         {error}
-        <Link to='/'>Take me to the Rotten Tomatillos home page</Link>
+        {!error.includes('500') && <Link to='/'>Take me to the Rotten Tomatillos home page</Link>}
       </p>
     </div>
   )
