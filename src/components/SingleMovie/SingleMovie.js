@@ -19,7 +19,6 @@ class SingleMovie extends Component {
   }
 
   componentDidMount = () => {
-    console.log('component did mount')
     api.getSingleMovie(this.state.id)
       .then(data => {
         if(data.title) {
@@ -36,18 +35,14 @@ class SingleMovie extends Component {
       if (this.state.userId) {
         this.getUserRating(this.state.userId)
       }
-    console.log('state: ', this.state)
+
   }
 
   componentDidUpdate = (prevProps) => {
     if (prevProps.userId !== this.props.userId) {
-      console.log('component did update')
       this.setState({userId: this.props.userId})
       this.getUserRating(this.props.userId)
     }
-    // if (!this.props.userId) {
-    //   this.setState({userRating: 0})
-    // }
   }
 
   getUserRating = (userId) => {
@@ -66,7 +61,6 @@ class SingleMovie extends Component {
     } else {
       this.setState({userRating: 0})
     }
-    console.log('state', this.state)
   }
 
   render() {
