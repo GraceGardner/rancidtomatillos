@@ -2,10 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as faSolidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
+import './UserRating.scss';
 
 const UserRating = () => {
-
-  fillStars 
 
   return (
   <div classNAme='user-rating-container'>
