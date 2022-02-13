@@ -39,7 +39,7 @@ class Login extends Component {
             X
             </button>
           </div>
-          <div class='input-container'>
+          <div className='input-container'>
             <div className='flex-row email-container'>
             <label htmlFor='email'>Email: </label>
             <input
@@ -62,7 +62,7 @@ class Login extends Component {
             </div>
           </div>
           {errorMessage}
-          <div className='sign-in-container'> 
+          <div className='sign-in-container'>
             <button
             className='sign-in-button'
             onClick={event => this.signIn(event)}>Sign In

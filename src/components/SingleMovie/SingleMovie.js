@@ -71,7 +71,7 @@ class SingleMovie extends Component {
         error={this.state.error}
       />
 
-    const userRating = <UserRating/>
+    const userRating = this.state.userId && <UserRating rating={this.state.userRating}/>
 
     const movieContainer = movie &&
       <div>
