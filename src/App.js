@@ -12,7 +12,7 @@ class App extends Component {
     super()
     this.state = {
       name: null,
-      id: null,
+      userId: null,
       showLogin: false,
       errorMessage: null
     }
@@ -27,7 +27,7 @@ class App extends Component {
   logoutUser = () => {
     this.setState({
       name: null,
-      id: null
+      userId: null
     })
   }
 
@@ -39,7 +39,7 @@ class App extends Component {
       } else {
         this.setState({
         name: response.user.name,
-        id: response.user.id,
+        userId: response.user.id,
         errorMessage: null,
         showLogin: false
       })}
@@ -66,12 +66,15 @@ class App extends Component {
       {loginModal}
       <Switch>
       <Route exact path='/' component={ AllMovies } />
-      <Route path='/:id' component={ SingleMovie } />
+      <Route path='/:id'
+        render={({ match }) => (
+          <SingleMovie userId={this.state.userId} id={match.params.id}/>
+        )}
+      />
       </Switch>
       </>
     );
   }
 }
-
 
 export default App;
