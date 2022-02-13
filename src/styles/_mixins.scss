@@ -25,10 +25,11 @@
   padding: 20px;
   border: 1px solid #888;
   width: 30%;
-  height: 40%;
+  height: 35%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  border-radius: 5%;
 }
 
 @mixin button() {
