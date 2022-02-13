@@ -4,7 +4,7 @@ import { faStar as faSolidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 import './UserRating.scss';
 
-const UserRating = ({rating}) => {
+const UserRating = ({rating, setRating}) => {
 
 const fillStars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(
   star => {
@@ -17,6 +17,7 @@ const fillStars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(
     return(<button
       className='star'
       key={star}
+      onClick={() => setRating(star)}
     >
       <FontAwesomeIcon icon={icon} />
     </button>)
