@@ -24,8 +24,10 @@
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 30%;
+  height: 40%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
 }
 

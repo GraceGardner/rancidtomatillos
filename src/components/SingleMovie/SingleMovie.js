@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import ErrorModal from '../ErrorModal/ErrorModal';
+import UserRating from '../UserRating/UserRating';
 import { Link } from 'react-router-dom'
 import api from '../../apiCalls';
-import tomatillo from '../../assets/tomatillo.svg'
+import tomatillo from '../../assets/tomatillo.svg';
 import './SingleMovie.scss';
+
 
 class SingleMovie extends Component {
   constructor({ match }) {
     super()
     this.state = {
       id: match.params.id,
-      movie: null
+      movie: null,
+      userRating: 0
     }
   }
 
@@ -37,6 +40,8 @@ class SingleMovie extends Component {
         error={this.state.error}
       />
 
+    const userRating = <UserRating/>
+
     const movieContainer = movie &&
       <div>
         <Link to='/'>
@@ -55,10 +60,10 @@ class SingleMovie extends Component {
             </div>
             <div className='rating-container'>
               <p className='bold-text'>Rating:</p>
-              <img className='sm-logo' src={tomatillo} alt='tomitillo'/>
               <p className='rating'>{movie.average_rating}</p>
             </div>
           </div>
+          {userRating}
           </header>
           <div className='image-container'>
             <img className='side-img' src={movie.poster_path} alt={movie.title + ' cover'}/>
