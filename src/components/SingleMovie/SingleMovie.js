@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import ErrorModal from '../ErrorModal/ErrorModal';
+import UserRating from '../UserRating/UserRating';
 import { Link } from 'react-router-dom'
 import api from '../../apiCalls';
 import tomatillo from '../../assets/tomatillo.svg';
 import './SingleMovie.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class SingleMovie extends Component {
   constructor({ match }) {
     super()
     this.state = {
       id: match.params.id,
-      movie: null
+      movie: null,
+      userRating: 0
     }
   }
 
@@ -38,46 +40,13 @@ class SingleMovie extends Component {
         error={this.state.error}
       />
 
+    const userRating = <UserRating/>
+
     const movieContainer = movie &&
       <div>
         <Link to='/'>
           <button className='back-button'>&laquo; Back</button>
         </Link>
-        <div classNAme='user-rating-container'>
-          <p className='user-rating'>Your Rating:</p>
-          <div className='star-container'>
-          <button
-          className='star'
-          value='1'
-          >
-          <FontAwesomeIcon icon="fa-solid fa-star" />
-          </button>
-          <button
-          className='star'
-          value='2'
-          >
-          <FontAwesomeIcon icon="fa-solid fa-star" />
-          </button>
-          <button
-          className='star'
-          value='3'
-          >
-          <FontAwesomeIcon icon="fa-solid fa-star" />
-          </button>
-          <button
-          className='star'
-          value='4'
-          >
-          <FontAwesomeIcon icon="fa-solid fa-star" />
-          </button>
-          <button
-          className='star'
-          value='5'
-          >
-          <FontAwesomeIcon icon="fa-solid fa-star" />
-          </button>
-          </div>
-        </div>
         <div className='single-movie-container'>
           <header className='single-movie-header'>
           <div className='title-container'>
@@ -91,10 +60,10 @@ class SingleMovie extends Component {
             </div>
             <div className='rating-container'>
               <p className='bold-text'>Rating:</p>
-              <img className='sm-logo' src={tomatillo} alt='tomitillo'/>
               <p className='rating'>{movie.average_rating}</p>
             </div>
           </div>
+          {userRating}
           </header>
           <div className='image-container'>
             <img className='side-img' src={movie.poster_path} alt={movie.title + ' cover'}/>
