@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import ErrorModal from '../ErrorModal/ErrorModal';
 import { Link } from 'react-router-dom'
 import api from '../../apiCalls';
-import tomatillo from '../../assets/tomatillo.svg'
+import tomatillo from '../../assets/tomatillo.svg';
 import './SingleMovie.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class SingleMovie extends Component {
   constructor({ match }) {
@@ -42,6 +43,41 @@ class SingleMovie extends Component {
         <Link to='/'>
           <button className='back-button'>&laquo; Back</button>
         </Link>
+        <div classNAme='user-rating-container'>
+          <p className='user-rating'>Your Rating:</p>
+          <div className='star-container'>
+          <button
+          className='star'
+          value='1'
+          >
+          <FontAwesomeIcon icon="fa-solid fa-star" />
+          </button>
+          <button
+          className='star'
+          value='2'
+          >
+          <FontAwesomeIcon icon="fa-solid fa-star" />
+          </button>
+          <button
+          className='star'
+          value='3'
+          >
+          <FontAwesomeIcon icon="fa-solid fa-star" />
+          </button>
+          <button
+          className='star'
+          value='4'
+          >
+          <FontAwesomeIcon icon="fa-solid fa-star" />
+          </button>
+          <button
+          className='star'
+          value='5'
+          >
+          <FontAwesomeIcon icon="fa-solid fa-star" />
+          </button>
+          </div>
+        </div>
         <div className='single-movie-container'>
           <header className='single-movie-header'>
           <div className='title-container'>
