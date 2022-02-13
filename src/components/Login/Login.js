@@ -39,25 +39,27 @@ class Login extends Component {
             X
             </button>
           </div>
-          <div className='flex-row'>
-            <label htmlFor='email'>Email:</label>
+          <div class='input-container'>
+            <div className='flex-row'>
+            <label htmlFor='email'>Email: </label>
             <input
-              type='text'
-              id='email'
-              name='email'
-              value={this.state.email}
-              onChange={event => this.handleChange(event)}
+            type='text'
+            id='email'
+            name='email'
+            value={this.state.email}
+            onChange={event => this.handleChange(event)}
             />
-          </div>
-          <div className='flex-row'>
-            <label htmlFor='password'>Password:</label>
+            </div>
+            <div className='flex-row'>
+            <label htmlFor='password'>Password: </label>
             <input
-              type='text'
-              id='password'
-              name='password'
-              value={this.state.password}
-              onChange={event => this.handleChange(event)}
+            type='text'
+            id='password'
+            name='password'
+            value={this.state.password}
+            onChange={event => this.handleChange(event)}
             />
+            </div>
           </div>
           {errorMessage}
           <button
