@@ -21,9 +21,17 @@
   @include button-hover();
 }
 
+.close-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .close-button {
   width: 5%;
-  align-content: center;
+  display: flex;
+  justify-content: center;
+  border: none;
 }
 
 .close-button:hover {

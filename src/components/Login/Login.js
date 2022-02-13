@@ -31,12 +31,14 @@ class Login extends Component {
     return(
       <div className='login-modal'>
         <form className='login-content'>
-          <button
+          <div className='close-container'>
+            <button
             className='close-button'
             onClick={() => this.props.toggleLogin()}
-          >
+            >
             X
-          </button>
+            </button>
+          </div>
           <div className='flex-row'>
             <label htmlFor='email'>Email:</label>
             <input
