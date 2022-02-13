@@ -29,6 +29,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  border-radius: 5%;
 }
 
 @mixin button() {
