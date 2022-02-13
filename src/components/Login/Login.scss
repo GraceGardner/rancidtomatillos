@@ -20,3 +20,12 @@
 .sign-in-button:hover {
   @include button-hover();
 }
+
+.close-button {
+  width: 5%;
+  align-content: center;
+}
+
+.close-button:hover {
+  @include box-shadow();
+}
