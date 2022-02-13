@@ -8,11 +8,12 @@ import './SingleMovie.scss';
 
 
 class SingleMovie extends Component {
-  constructor({ match }) {
+  constructor({ userId, id }) {
     super()
     this.state = {
-      id: match.params.id,
+      id: id,
       movie: null,
+      userId: userId,
       userRating: 0
     }
   }
@@ -30,6 +31,33 @@ class SingleMovie extends Component {
         console.log(error)
         this.setState({error: error.message})
       })
+  }
+
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.userId !== this.props.userId) {
+      console.log('component did update')
+      this.setState({userId: this.props.userId})
+      this.getUserRating(prevProps)
+    }
+  }
+
+  getUserRating = (props) => {
+    api.getRatings(this.state.userId)
+      .then(data => {
+        this.checkForRating(props.userId, data.ratings)
+      })
+  }
+
+  checkForRating = (userId, ratings) => {
+    console.log(ratings)
+    const userRating = ratings.find(rating => {
+      return rating.user_id === parseInt(userId) && rating.movie_id === parseInt(this.state.id)
+    });
+    console.log(userRating)
+    if (userRating) {
+      this.setState({userRating: userRating.rating});
+    }
+    console.log(this.state)
   }
 
   render() {

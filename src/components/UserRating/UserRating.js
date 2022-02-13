@@ -7,7 +7,7 @@ import './UserRating.scss';
 const UserRating = () => {
 
   return (
-  <div classNAme='user-rating-container'>
+  <div className='user-rating-container'>
     <p className='user-rating'>Your Rating:</p>
     <div className='star-container'>
       <button

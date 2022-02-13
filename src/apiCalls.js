@@ -27,9 +27,9 @@ const api = {
 
   getAllMovies() {
     return api.get('movies')
-    .then(data => {
-      return cleanAllData(data.movies)
-    })
+      .then(data => {
+        return cleanAllData(data.movies)
+      })
   },
 
   postUser(userEmail, userPassword) {
@@ -41,8 +41,24 @@ const api = {
       }
     })
     .then(response => response.json())
-  }
+  },
 
+  getRatings() {
+    return fetch('https://user-ratings-api.herokuapp.com/api/v1/ratings')
+      .then(response => response.json())
+  },
+
+  postRating(request) {
+    return fetch('https://user-ratings-api.herokuapp.com/api/v1/ratings', {
+      method: 'post',
+      body: JSON.stringify(request),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+  }
 };
 
 export default api;
