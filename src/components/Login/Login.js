@@ -31,37 +31,43 @@ class Login extends Component {
     return(
       <div className='login-modal'>
         <form className='login-content'>
-          <button
+          <div className='close-container'>
+            <button
             className='close-button'
             onClick={() => this.props.toggleLogin()}
-          >
+            >
             X
-          </button>
-          <div className='flex-row'>
-            <label htmlFor='email'>Email:</label>
-            <input
-              type='text'
-              id='email'
-              name='email'
-              value={this.state.email}
-              onChange={event => this.handleChange(event)}
-            />
+            </button>
           </div>
-          <div className='flex-row'>
-            <label htmlFor='password'>Password:</label>
+          <div class='input-container'>
+            <div className='flex-row email-container'>
+            <label htmlFor='email'>Email: </label>
             <input
-              type='text'
-              id='password'
-              name='password'
-              value={this.state.password}
-              onChange={event => this.handleChange(event)}
+            type='text'
+            id='email'
+            name='email'
+            value={this.state.email}
+            onChange={event => this.handleChange(event)}
             />
+            </div>
+            <div className='flex-row password-container'>
+            <label htmlFor='password'>Password: </label>
+            <input
+            type='text'
+            id='password'
+            name='password'
+            value={this.state.password}
+            onChange={event => this.handleChange(event)}
+            />
+            </div>
           </div>
           {errorMessage}
-          <button
+          <div className='sign-in-container'> 
+            <button
             className='sign-in-button'
             onClick={event => this.signIn(event)}>Sign In
-          </button>
+            </button>
+          </div>
         </form>
       </div>
     )

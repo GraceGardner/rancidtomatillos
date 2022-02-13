@@ -59,11 +59,12 @@ class SingleMovie extends Component {
               <p className='runtime'>{movie.runtime}</p>
             </div>
             <div className='rating-container'>
+              <img className='sm-logo' src={tomatillo} alt='tomitillo'/>
               <p className='bold-text'>Rating:</p>
               <p className='rating'>{movie.average_rating}</p>
             </div>
+            {userRating}
           </div>
-          {userRating}
           </header>
           <div className='image-container'>
             <img className='side-img' src={movie.poster_path} alt={movie.title + ' cover'}/>
