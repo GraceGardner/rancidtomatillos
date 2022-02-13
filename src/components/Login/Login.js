@@ -40,7 +40,7 @@ class Login extends Component {
             </button>
           </div>
           <div class='input-container'>
-            <div className='flex-row'>
+            <div className='flex-row email-container'>
             <label htmlFor='email'>Email: </label>
             <input
             type='text'
@@ -50,7 +50,7 @@ class Login extends Component {
             onChange={event => this.handleChange(event)}
             />
             </div>
-            <div className='flex-row'>
+            <div className='flex-row password-container'>
             <label htmlFor='password'>Password: </label>
             <input
             type='text'
@@ -62,10 +62,12 @@ class Login extends Component {
             </div>
           </div>
           {errorMessage}
-          <button
+          <div className='sign-in-container'> 
+            <button
             className='sign-in-button'
             onClick={event => this.signIn(event)}>Sign In
-          </button>
+            </button>
+          </div>
         </form>
       </div>
     )
