@@ -7,16 +7,40 @@
 
 .login-content {
   @include modal-content();
-}
-
-.flex-row {
-  display: flex;
+  width: 400px;
+  height: 300px;
 }
 
 .sign-in-container {
+  @include flex-row();
   width: 100%;
-  display: flex;
   justify-content: center;
+}
+
+.input-container {
+  @include flex-column();
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 25%;
+  padding-left: 10%;
+  color: $teal;
+  font-weight: bold;
+}
+
+.password-container {
+  @include flex-row();
+}
+
+.email-container {
+  @include flex-row();
+  margin-left: 32px;
+}
+
+input {
+  border-color: $grey;
+  border-style: solid;
+  margin-left: 10px;
+  border-radius: 3px;
 }
 
 .sign-in-button {
@@ -30,15 +54,15 @@
 }
 
 .close-container {
+  @include flex-row();
   width: 100%;
-  display: flex;
   justify-content: flex-end;
 }
 
 .close-button {
-  width: 5%;
-  display: flex;
+  @include flex-row();
   justify-content: center;
+  width: 5%;
   border-color: $grey;
   background-color: transparent;
   color: $grey;
@@ -52,25 +76,6 @@
   color: #C8C6C6;
   cursor: pointer;
   opacity: 0.8;
-}
-
-input {
-    border-color: $grey;
-    border-style: solid;
-    margin-left: 10px;
-    border-radius: 3px;
-}
-
-.input-container {
-  width: 70%;
-  height: 25%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-content: center;
-  align-items: flex-end;
-  color: $teal;
-  font-weight: bold;
 }
 
 .error-message {

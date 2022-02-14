@@ -43,7 +43,7 @@ class Login extends Component {
             </button>
           </div>
           <div className='input-container'>
-            <div className='flex-row email-container'>
+            <div className='email-container'>
               <label htmlFor='email'>Email: </label>
               <input
                 type='text'
@@ -53,7 +53,7 @@ class Login extends Component {
                 onChange={event => this.handleChange(event)}
               />
             </div>
-            <div className='flex-row password-container'>
+            <div className='password-container'>
               <label htmlFor='password'>Password: </label>
               <input
                 type='text'

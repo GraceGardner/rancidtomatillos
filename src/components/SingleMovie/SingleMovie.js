@@ -87,28 +87,30 @@ class SingleMovie extends Component {
     />
 
     const movieContainer = movie &&
-      <div>
-        <Link to='/'>
-          <button className='back-button'>&laquo; Back</button>
-        </Link>
+      <div className='page-container'>
+        <div className='button-container'>
+          <Link to='/'>
+            <button className='back-button'>&laquo; Back</button>
+          </Link>
+        </div>
         <div className='single-movie-container'>
           <header className='single-movie-header'>
-          <div className='title-container'>
-            <h2 className='movie-title'>{movie.title}</h2>
-            <p className='movie-tagline'>{movie.tagline}</p>
-          </div>
-          <div className='header-details'>
-            <div className='runtime-container'>
-              <p className='bold-text'>Runtime:</p>
-              <p className='runtime'>{movie.runtime}</p>
+            <div className='title-container'>
+              <h2 className='movie-title'>{movie.title}</h2>
+              <p className='movie-tagline'>{movie.tagline}</p>
             </div>
-            <div className='rating-container'>
-              <img className='sm-logo' src={tomatillo} alt='tomitillo'/>
-              <p className='bold-text'>Rating:</p>
-              <p className='rating'>{movie.average_rating}</p>
+            <div className='header-details'>
+              <div className='runtime-container'>
+                <p className='bold-text runtime-title'>Runtime:</p>
+                <p className='runtime'>{movie.runtime}</p>
+              </div>
+              <div className='rating-container'>
+                <img className='sm-logo' src={tomatillo} alt='tomitillo'/>
+                <p className='bold-text rating-title'>Rating:</p>
+                <p className='rating-text'>{movie.average_rating}</p>
+              </div>
+              {userRating}
             </div>
-            {userRating}
-          </div>
           </header>
           <div className='image-container'>
             <img className='side-img' src={movie.poster_path} alt={movie.title + ' cover'}/>
