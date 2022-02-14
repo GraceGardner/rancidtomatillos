@@ -57,7 +57,7 @@
 input {
     border-color: $grey;
     border-style: solid;
-    margin-left:10%;
+    margin-left: 10px;
     border-radius: 3px;
 }
 
@@ -71,4 +71,9 @@ input {
   align-items: flex-end;
   color: $teal;
   font-weight: bold;
+}
+
+.error-message {
+  color: $red;
+  text-align: center;
 }
