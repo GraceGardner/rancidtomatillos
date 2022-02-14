@@ -26,7 +26,10 @@ class Login extends Component {
 
   render() {
 
-    const errorMessage = this.props.errorMessage && <p className='error-message'>{this.props.errorMessage}</p>
+    const errorMessage = this.props.errorMessage &&
+      <p className='error-message'>
+        {this.props.errorMessage}
+      </p>
 
     return(
       <div className='login-modal'>
@@ -41,31 +44,33 @@ class Login extends Component {
           </div>
           <div className='input-container'>
             <div className='flex-row email-container'>
-            <label htmlFor='email'>Email: </label>
-            <input
-            type='text'
-            id='email'
-            name='email'
-            value={this.state.email}
-            onChange={event => this.handleChange(event)}
-            />
+              <label htmlFor='email'>Email: </label>
+              <input
+                type='text'
+                id='email'
+                name='email'
+                value={this.state.email}
+                onChange={event => this.handleChange(event)}
+              />
             </div>
             <div className='flex-row password-container'>
-            <label htmlFor='password'>Password: </label>
-            <input
-            type='text'
-            id='password'
-            name='password'
-            value={this.state.password}
-            onChange={event => this.handleChange(event)}
-            />
+              <label htmlFor='password'>Password: </label>
+              <input
+                type='text'
+                id='password'
+                name='password'
+                value={this.state.password}
+                onChange={event => this.handleChange(event)}
+              />
             </div>
           </div>
           {errorMessage}
           <div className='sign-in-container'>
             <button
-            className='sign-in-button'
-            onClick={event => this.signIn(event)}>Sign In
+              className='sign-in-button'
+              onClick={event => this.signIn(event)}
+            >
+            Sign In
             </button>
           </div>
         </form>
