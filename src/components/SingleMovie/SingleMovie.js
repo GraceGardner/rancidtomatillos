@@ -63,6 +63,15 @@ class SingleMovie extends Component {
     }
   }
 
+  setRating = (rating) => {
+    api.postRating({
+      user_id: this.state.userId,
+      movie_id: parseInt(this.state.id),
+      rating: parseInt(rating)
+    })
+    .then(data => this.setState({userRating: rating}))
+  }
+
   render() {
     const movie = this.state.movie;
 
@@ -71,7 +80,11 @@ class SingleMovie extends Component {
         error={this.state.error}
       />
 
-    const userRating = <UserRating/>
+    const userRating = this.state.userId &&
+    <UserRating
+      rating={this.state.userRating}
+      setRating={this.setRating}
+    />
 
     const movieContainer = movie &&
       <div>
