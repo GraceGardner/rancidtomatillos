@@ -2,7 +2,7 @@
 @import '../../styles/_mixins';
 
 nav {
-  display: flex;
+  @include flex-row();
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid $teal;
@@ -18,7 +18,7 @@ h1 {
 
 .logo-container,
 .logout {
-  display: flex;
+  @include flex-row();
   align-items: center;
 }
 

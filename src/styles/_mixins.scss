@@ -47,3 +47,12 @@
   cursor: pointer;
   opacity: 0.7;
 }
+
+@mixin flex-row() {
+  display: flex;
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}

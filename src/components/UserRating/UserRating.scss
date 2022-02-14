@@ -2,7 +2,7 @@
 @import '../../styles/_mixins';
 
 .star-container {
-  display: flex;
+  @include flex-row();
 }
 
 .star {
@@ -13,9 +13,9 @@
 }
 
 .user-rating-container {
-  display: flex;
-  width: 100%;
+  @include flex-row();
   justify-content: flex-end;
+  width: 100%;
   margin-right: 15%;
 
   p {

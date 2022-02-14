@@ -2,14 +2,13 @@
 @import '../../styles/_mixins';
 
 .page-container {
-  display: flex;
-  flex-direction: column;
+  @include flex-column();
   align-items: center;
 }
 
 .button-container {
   width: 100%;
-  display:flex;
+  @include flex-row();
   justify-content: flex-start;
 }
 
@@ -42,16 +41,15 @@
 }
 
 .single-movie-header {
-  width: 100%;
-  display: flex;
+  @include flex-row();
   justify-content: space-between;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .header-details {
-  display: flex;
+  @include flex-column();
   justify-content: space-around;
-  flex-direction: column;
 }
 
 .bold-text {
@@ -63,37 +61,34 @@
 }
 
 .rating-container {
-  display: flex;
-  flex-direction: row;
+  @include flex-row();
   justify-content: flex-start;
 }
 
 .runtime-container {
-  display: flex;
-  flex-direction: row;
+  @include flex-row();
   justify-content: flex-start;
 }
 
 .image-container {
-  display: flex;
-  flex-direction: row;
+  @include flex-row();
   justify-content: flex-start;
 }
 
 .side-img {
+  @include box-shadow();
   width: 25%;
   height: auto;
   margin-right: .25%;
-  @include box-shadow();
 }
 
 .backdrop-img {
-  width: 75%;
   @include box-shadow();
+  width: 75%;
 }
 
 .details-row {
-  display: flex;
+  @include flex-row();
   justify-content: space-between;
   margin-top: 20px;
   padding-top: 20px;
@@ -101,7 +96,7 @@
 }
 
 .movie-details {
-  width: 25.5%;
+  width: 24%;
   padding-right: 20px;
   border-right: 1px solid rgba(0, 159, 152, .5);
 }
@@ -112,6 +107,6 @@
 }
 
 .movie-overview {
-  width: 74.5%;
+  width: 76%;
   padding-left: 20px;
 }
