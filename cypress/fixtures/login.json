@@ -1,0 +1,52 @@
+{email: <String>, password: <String>}
+
+{user: {id: 1, name: "Alan", email: "alan@turing.io"}}
+
+[
+    {name: 'Alan', email: 'alan@turing.io', password: 'promisedotyall'},
+    {name: 'Sam', email: 'sam@turing.io', password: '123456', id: 77},
+    {name: 'Lucy', email: 'lucy@turing.io', password: 'password1', id: 78},
+    {name: 'Greg', email: 'greg@turing.io', password: 'abc123', id: 79},
+    {name: 'Ken', email: 'ken@turing.io', password: '654321', id: 80},
+    {name: 'Charlie', email: 'charlie@turing.io', password: 'qwerty', id: 81},
+    {name: 'Diana', email: 'diana@turing.io', password: '111111', id: 82},
+]
+
+{
+    "user": {
+        "id": 77,
+        "name": "Sam",
+        "email": "sam@turing.io"
+    }
+}
+
+{
+    "user": {
+        "id": 78,
+        "name": "Lucy",
+        "email": "lucy@turing.io"
+    }
+}
+
+{
+    "user": {
+        "id": 79,
+        "name": "Greg",
+        "email": "greg@turing.io"
+    }
+}
+
+{
+    "user": {
+        "id": 81,
+        "name": "Charlie",
+        "email": "charlie@turing.io"
+    }
+}
+{
+    "user": {
+        "id": 82,
+        "name": "Diana",
+        "email": "diana@turing.io"
+    }
+}
