@@ -19,9 +19,9 @@ class Login extends Component {
   }
 
   signIn = (event) => {
-    event.preventDefault()
-    this.props.loginUser(this.state.email, this.state.password)
-    this.clearInputs()
+    event.preventDefault();
+    this.props.loginUser(this.state.email, this.state.password);
+    this.clearInputs();
   }
 
   render() {
@@ -75,8 +75,8 @@ class Login extends Component {
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default Login
+export default Login;

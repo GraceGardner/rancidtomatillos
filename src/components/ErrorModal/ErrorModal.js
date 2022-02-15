@@ -10,7 +10,7 @@ const ErrorModal = ({error}) => {
         {!error.includes('500') && <Link to='/'>Take me to the Rotten Tomatillos home page</Link>}
       </div>
     </div>
-  )
+  );
 }
 
-export default ErrorModal
+export default ErrorModal;

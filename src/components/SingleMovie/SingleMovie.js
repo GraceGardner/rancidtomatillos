@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import ErrorModal from '../ErrorModal/ErrorModal';
 import UserRating from '../UserRating/UserRating';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import api from '../../apiCalls';
 import tomatillo from '../../assets/tomatillo.svg';
 import './SingleMovie.scss';
-
 
 class SingleMovie extends Component {
   constructor({ userId, id }) {
@@ -32,16 +31,15 @@ class SingleMovie extends Component {
         this.setState({error: error.message})
       })
 
-      if (this.state.userId) {
-        this.getUserRating(this.state.userId)
-      }
-
+    if (this.state.userId) {
+      this.getUserRating(this.state.userId);
+    }
   }
 
   componentDidUpdate = (prevProps) => {
     if (prevProps.userId !== this.props.userId) {
-      this.setState({userId: this.props.userId})
-      this.getUserRating(this.props.userId)
+      this.setState({userId: this.props.userId});
+      this.getUserRating(this.props.userId);
     }
   }
 
@@ -56,10 +54,11 @@ class SingleMovie extends Component {
     const userRating = ratings.find(rating => {
       return rating.user_id === parseInt(userId) && rating.movie_id === parseInt(this.state.id)
     });
+
     if (userRating) {
       this.setState({userRating: userRating.rating});
     } else {
-      this.setState({userRating: 0})
+      this.setState({userRating: 0});
     }
   }
 
@@ -69,7 +68,7 @@ class SingleMovie extends Component {
       movie_id: parseInt(this.state.id),
       rating: parseInt(rating)
     })
-    .then(data => this.setState({userRating: rating}))
+      .then(data => this.setState({userRating: rating}))
   }
 
   render() {
@@ -81,10 +80,10 @@ class SingleMovie extends Component {
       />
 
     const userRating = this.state.userId &&
-    <UserRating
-      rating={this.state.userRating}
-      setRating={this.setRating}
-    />
+      <UserRating
+        rating={this.state.userRating}
+        setRating={this.setRating}
+      />
 
     const movieContainer = movie &&
       <div className='page-container'>
@@ -133,7 +132,7 @@ class SingleMovie extends Component {
         { movieContainer }
         { errorModal }
       </>
-    )
+    );
   }
 }
 

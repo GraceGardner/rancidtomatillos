@@ -10,7 +10,7 @@ describe('Errors on landing page', () => {
     cy.get('.error-modal > p')
       .should('include.text','500')
       .should('include.text','We\'re having some trouble loading the page. Please try again later!')
-  })
+  });
 
   it('should handle 404 errors', () => {
     cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
@@ -108,5 +108,5 @@ describe('Error handling for for single movie page', () => {
       .should('include.text','404')
       .get('a')
       .should('include.text', 'Take me to the Rotten Tomatillos home page')
-  })
+  });
 });

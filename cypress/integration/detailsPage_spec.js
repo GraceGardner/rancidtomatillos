@@ -5,24 +5,24 @@ describe('Onward details page', () => {
 
     cy.visit('http://localhost:3000')
       .get('.card').first().click()
-  })
+  });
 
   it('should display the movie title', () => {
     cy.get('.movie-title')
       .should('have.text', 'Onward')
-  })
+  });
 
   it('should display the runtime', () => {
     cy.get('.runtime-container > p')
       .eq(1)
       .should('have.text', '102 minutes')
-  })
+  });
 
   it('should display the rating', () => {
     cy.get('.rating-container > p')
       .eq(1)
       .should('have.text', '6.4')
-  })
+  });
 
   it('should display two images', () => {
     cy.get('.image-container')
@@ -35,7 +35,7 @@ describe('Onward details page', () => {
 
     cy.get('.backdrop-img')
       .and('be.visible')
-  })
+  });
 
   it('should display the movie details', () => {
     cy.get('.movie-details > p')
@@ -56,15 +56,15 @@ describe('Onward details page', () => {
     cy.get('.movie-details > p')
       .eq(3)
       .should('have.text', 'Revenue: $ 103,181,419')
-  })
+  });
 
   it('should display the movie description', () => {
     cy.get('.movie-overview')
       .should('have.text', 'In a suburban fantasy world, two teenage elf brothers embark on an extraordinary quest to discover if there is still a little magic left out there.')
-  })
+  });
 
   it('should have a home button', () => {
     cy.get('button')
       .should('have.text', '« Back')
-  })
-})
+  });
+});

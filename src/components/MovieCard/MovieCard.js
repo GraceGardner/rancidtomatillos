@@ -10,19 +10,21 @@ const MovieCard = ({image, title, id, selectMovie, rating}) => {
           className='card'
           id={id}
           tabIndex='0'
-          role='button'>
+          role='button'
+        >
           <img className='card-image' src={image} alt={title + ' cover'}/>
         </div>
       </Link>
       <p className='rating'>
         <img
           className='tomatillo'
-          src={tomatillo}/>
+          src={tomatillo}
+        />
         {rating.toFixed(1)}
       </p>
       <h3 className='title'>{title}</h3>
     </div>
-  )
+  );
 }
 
 export default MovieCard;
