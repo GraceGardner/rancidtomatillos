@@ -1,0 +1,44 @@
+{ "ratings": [
+    {
+      "id": 3503,
+      "user_id": 77,
+      "movie_id": 694919,
+      "rating": 10
+    },
+    {
+      "id": "2345",
+      "user_id": "80",
+      "movie_id": "508439",
+      "rating": "6"
+    },
+    {
+      "id": 3244,
+      "user_id": 80,
+      "movie_id": 718444,
+      "rating": 1
+    },
+    {
+      "id": 6543,
+      "user_id": 77,
+      "movie_id": 539885,
+      "rating": 3
+    },
+    {
+      "id": 987,
+      "user_id": 80,
+      "movie_id": 581392,
+      "rating": 10
+    },
+    {
+      "id": 8754,
+      "user_id": 77,
+      "movie_id": 726739,
+      "rating": 7
+    },
+    {
+      "id": 7213,
+      "user_id": 80,
+      "movie_id": 627290,
+      "rating": 8
+    }
+]}
