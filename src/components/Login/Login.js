@@ -27,7 +27,7 @@ class Login extends Component {
   render() {
 
     const errorMessage = this.props.errorMessage &&
-      <p className='error-message'>
+      <p className='error-message-login'>
         {this.props.errorMessage}
       </p>
 

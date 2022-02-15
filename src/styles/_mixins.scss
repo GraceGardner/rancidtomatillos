@@ -27,8 +27,8 @@
   width: 30%;
   height: 35%;
   @include flex-column();
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
   border-radius: 10px;
 }
 
