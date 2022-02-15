@@ -2,30 +2,29 @@
 @import '../../styles/_mixins';
 
 .card-container {
+  @include flex-column();
+  align-items: center;
+  place-self: center;
   border: none;
   height: auto;
   width: 85%;
-  place-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   border-radius: 10px;
 }
 
 .card {
+  @include box-shadow();
   width: 100%;
   background-color: transparent;
   padding: 0;
   border: none;
   border-radius: 10px;
-  @include box-shadow();
   transition: all .1s ease-in-out;
 }
 
 .card:hover {
+  @include box-shadow-hover();
   cursor: pointer;
   transform: scale(1.05);
-  @include box-shadow-hover();
 }
 
 .card-image {
