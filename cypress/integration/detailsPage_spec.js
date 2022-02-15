@@ -63,8 +63,8 @@ describe('Onward details page', () => {
       .should('have.text', 'In a suburban fantasy world, two teenage elf brothers embark on an extraordinary quest to discover if there is still a little magic left out there.')
   });
 
-  it('should have a home button', () => {
-    cy.get('button')
+  it('should have a back button', () => {
+    cy.get('.back-button')
       .should('have.text', '« Back')
   });
 });

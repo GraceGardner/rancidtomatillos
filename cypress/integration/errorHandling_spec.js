@@ -7,7 +7,7 @@ describe('Errors on landing page', () => {
 
     cy.visit('http://localhost:3000')
 
-    cy.get('.error-modal > p')
+    cy.get('.error-message')
       .should('include.text','500')
       .should('include.text','We\'re having some trouble loading the page. Please try again later!')
   });
@@ -19,11 +19,11 @@ describe('Errors on landing page', () => {
 
     cy.visit('http://localhost:3000')
 
-    cy.get('.error-modal > p')
+    cy.get('.error-message')
       .should('include.text','404')
       .should('include.text','Oh no! Looks like this was a rancid tomatillo.')
       .get('a')
-      .should('include.text', 'Take me to the Rotten Tomatillos home page')
+      .should('include.text', 'Take me to the Rancid Tomatillos home page')
   });
 
   it('should handle 400 errors', () => {
@@ -33,11 +33,11 @@ describe('Errors on landing page', () => {
 
     cy.visit('http://localhost:3000')
 
-    cy.get('.error-modal > p')
+    cy.get('.error-message')
       .should('include.text','401')
       .should('include.text','Oops! Something went wrong. Please reload the page and try agian.')
       .get('a')
-      .should('include.text', 'Take me to the Rotten Tomatillos home page')
+      .should('include.text', 'Take me to the Rancid Tomatillos home page')
   });
 
   it('should not show a movie card if data is missing', () => {
@@ -63,7 +63,7 @@ describe('Error handling for missing movie details', () => {
     cy.get('.runtime')
       .should('have.text', 'unavailable')
 
-    cy.get('.rating')
+    cy.get('.rating-text')
       .should('have.text', 'unavailable')
 
     cy.get('.side-img')
@@ -95,18 +95,18 @@ describe('Error handling for for single movie page', () => {
     cy.visit('http://localhost:3000')
       .get('.card').first().click()
 
-    cy.get('.error-modal > p')
+    cy.get('.error-message')
       .should('include.text','Oh no! Looks like this was a rancid tomatillo.')
       .get('a')
-      .should('include.text', 'Take me to the Rotten Tomatillos home page')
+      .should('include.text', 'Take me to the Rancid Tomatillos home page')
   });
 
   it('should show a 404 error if a url is entered with a movie id that doesnt exist', () => {
     cy.visit('http://localhost:3000/90000000')
 
-    cy.get('.error-modal > p')
+    cy.get('.error-message')
       .should('include.text','404')
       .get('a')
-      .should('include.text', 'Take me to the Rotten Tomatillos home page')
+      .should('include.text', 'Take me to the Rancid Tomatillos home page')
   });
 });
