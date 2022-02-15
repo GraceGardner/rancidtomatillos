@@ -11,7 +11,7 @@ View the deployed site [here](https://rancidtomatillos2110.herokuapp.com/)!
 - [Project Specs](#project-specs)
 - [Challenges](#challenges)
 - [Future Iterations](#future-iterations)
-- [Install & Setup](#set-up)
+- [Install and Setup](#install-and-setup)
 - [api](#api)
 - [Tech Stack](#tech-stack)
 - [Contributors](#contributors)
@@ -37,29 +37,35 @@ View the spec for this project [here](https://frontend.turing.edu/projects/modul
 When the Rancid Tomatillos app loads, the user will see the home page with all movies displayed. Each movie card includes the movie's cover photo, title, and Rancid Tomatillo rating.
 
 View all movies:
- <img src="https://media.giphy.com/media/2JmJuA5i3DQMUupljb/giphy-downsized-large.gif" width="75%">
+
+<img src="https://media.giphy.com/media/2JmJuA5i3DQMUupljb/giphy.gif" width="75%">
 
 When a user clicks on a movie card, they are brought to a new page that displays additional details for that movie. If data is missing for a movie's details, a message is shown letting users know that information is unavailable. The user can click the "back" button to navigate back to the home page and view all movies.
 
 View a single movie's details:
- <img src="https://media.giphy.com/media/4dCXu15rJKMNfmyh57/giphy.gif" width="75%">
+
+<img src="https://media.giphy.com/media/4dCXu15rJKMNfmyh57/giphy.gif" width="75%">
 
 A user can login to their account by clicking the "login" button from any page on the site. A login modal will appear and the user can enter their credentials. If an incorrect email or password is entered, the user is shown an error message letting them know what went wrong. If the credentials are correct, the user is now logged in to their account and is brought back to the page they were previously on.
 
 When logged in, the user has the option to add a rating using the stars on a movie's details page. The user can change their rating as many times as they'd like.
 
 Login from home page:
+
  <img src="https://media.giphy.com/media/fEVYNv7YEQKostpITa/giphy.gif" width="75%">
 
 Login from a movie details page:
- <img src=" <img src="https://media.giphy.com/media/ZER1jtSlMzDCUMqLsM/giphy.gif" width="75%">" width="75%">
+
+<img src="https://media.giphy.com/media/ZER1jtSlMzDCUMqLsM/giphy.gif" width="75%">
 
 Login error:
+
  <img src="https://media.giphy.com/media/dUyRyYLXv4knvZpVLd/giphy.gif" width="75%">
 
 If an error occurs when trying to access the app, the user is shown an error modal letting them know what went wrong. If there is a 500 error, the user is asked to come back later. For all other errors, the user is shown the error message as well as a link back to the Rancid Tomatillos homepage. For example, if the user enters an incorrect url for a movie details page, they are shown a 404 error and can follow the link back to the home page.
 
 Error handling:
+
  <img src="https://media.giphy.com/media/R12a4a1e8wXB3mxQls/giphy.gif" width="75%">
 
 ## Challenges
@@ -70,13 +76,14 @@ Error handling:
 - The api's that are provided for this app are missing information, so the team had to utilize data cleaning and extensive error handling to account for each scenario.
 
 ## Future Iterations
+
 - Add a search bar and filter options to main page
 - Show user's rating on movie card on home page
 - Use a database to store user ratings data so that it persists beyond one session. Our api data is stored in the Express server file, and due to Heroku limitations any new data does not persist after a user's session.
 - Refining the error handling on the login modal (hiding the error message when a user clicks back into the input, do not clear inputs, etc)
 - Add the ability for a user to delete their rating from a movie
 
-## Install & Setup
+## Install and Setup
 
 To run this app locally:
 
@@ -96,12 +103,14 @@ Movie and user data is accessed via the following api, built by staff at Turing.
 
 [Movie Data api](https://rancid-tomatillos.herokuapp.com/api/v1)
 
-Our team gave ourselves the challenge to learn and implement Express to build an api that stores all user ratings. See both the api link and repo below.
+Our team gave ourselves the challenge to learn and implement Express to build an api that stores all user ratings. See both the api and repo below.
 
 [User Ratings api repo](https://github.com/aliroemhildt/user-ratings-api)
+
 [User Ratings api](https://user-ratings-api.herokuapp.com/api/v1/ratings)
 
 ## Tech Stack
+
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
@@ -112,7 +121,8 @@ Our team gave ourselves the challenge to learn and implement Express to build an
 
 ![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
 
-
 ## Contributors
+
 [Ali Roemhildt](https://github.com/aliroemhildt)
+
 [Grace Gardner](https://github.com/GraceGardner)
