@@ -7,6 +7,8 @@
 
 .login-content {
   @include modal-content();
+  justify-content: space-around;
+  align-items: flex-start;
   width: 400px;
   height: 300px;
 }
@@ -78,7 +80,7 @@ input {
   opacity: 0.8;
 }
 
-.error-message {
+.error-message-login {
   color: $red;
   text-align: center;
 }

@@ -7,8 +7,11 @@
 
 .modal-content {
   @include modal-content();
+  justify-content: center;
+  align-items: center;
 }
 
 .error-message {
   margin-bottom: 20px;
+  text-align: center;
 }

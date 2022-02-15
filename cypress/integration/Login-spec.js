@@ -73,17 +73,17 @@ describe('Login user flow', () => {
       .eq(1).type('654321')
       .get('.sign-in-button')
       .click()
-      .get('.error-message')
+      .get('.error-message-login')
       .should('have.text', 'Username or password is incorrect')
 
     cy.get('.sign-in-button').click()
-      .get('.error-message')
+      .get('.error-message-login')
       .should('have.text', 'You are missing a required parameter of email')
 
     cy.get('input')
       .eq(0).type('ken@turin.io')
       .get('.sign-in-button').click()
-      .get('.error-message')
+      .get('.error-message-login')
       .should('have.text', 'You are missing a required parameter of password')
 
     cy.get('.close-button').click()
