@@ -1,6 +1,6 @@
 describe('Login user flow', () => {
 
-it('should allow a user to login and then view movie ratings',() =>  {
+it('should allow a user to login and then update and view movie ratings',() =>  {
     cy.intercept('post','https://rancid-tomatillos.herokuapp.com/api/v2/login',
     {
       "user": {
@@ -10,21 +10,82 @@ it('should allow a user to login and then view movie ratings',() =>  {
       }
     })
     cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies/*', { fixture: 'movie.json'})
-    cy.intercept('GET', 'https://user-ratings-api.herokuapp.com/api/v1/ratings',
-    { fixture: 'ratings.json'})
+
     cy.visit('http://localhost:3000')
-    .get('button')
-    .should('have.text', 'LOGIN')
-    .click()
-    .get('input')
-    .eq(0).type('ken@turing.io')
-    .get('input')
-    .eq(1).type('654321')
-    .get('.sign-in-button')
-    .click()
-    .get('.user-greeting')
-    .should('have.text', 'Hello, Ken!')
-    .
+      .get('button')
+      .should('have.text', 'LOGIN')
+      .click()
+
+      .get('input')
+      .eq(0).type('ken@turing.io')
+      .get('input')
+      .eq(1).type('654321')
+      .get('.sign-in-button')
+      .click()
+
+      .get('.user-greeting')
+      .should('have.text', 'Hello, Ken!')
+
+      .get('.card').first().click()
+      .get('.user-rating-container')
+      .get('.star')
+      .eq(5)
+      .click()
+
+    cy.get('.star')
+      .eq(5)
+      .find('svg')
+      .should('have.attr', 'data-prefix', 'fas')
+
+    cy.get('.star')
+      .eq(6)
+      .find('svg')
+      .should('have.attr', 'data-prefix', 'far')
+
+      .get('.back-button').click()
+      .get('.card').first().click()
+
+    cy.get('.star')
+      .eq(5)
+      .find('svg')
+      .should('have.attr', 'data-prefix', 'fas')
+
+    cy.get('.star')
+      .eq(6)
+      .find('svg')
+      .should('have.attr', 'data-prefix', 'far')
+
+    cy.get('.logout-button')
+      .should('have.text', "LOGOUT")
+      .click()
+      .get('.login-button')
+      .should('have.text', 'LOGIN')
+  })
+
+  it('should give errors for incorrect or missing user login inputs', () => {
+    cy.visit('http://localhost:3000')
+      .get('.login-button')
+      .click()
+      .get('input')
+      .eq(0).type('ken@turin.io')
+      .get('input')
+      .eq(1).type('654321')
+      .get('.sign-in-button')
+      .click()
+      .get('.error-message')
+      .should('have.text', 'Username or password is incorrect')
+
+      .get('.sign-in-button').click()
+      .get('.error-message')
+      .should('have.text', 'You are missing a required parameter of email')
+
+      .get('input')
+      .eq(0).type('ken@turin.io')
+      .get('.sign-in-button').click()
+      .get('.error-message')
+      .should('have.text', 'You are missing a required parameter of password')
+
+      .get('.close-button').click()
   })
 
 })
