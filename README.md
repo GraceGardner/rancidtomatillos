@@ -36,35 +36,35 @@ View the spec for this project [here](https://frontend.turing.edu/projects/modul
 
 When the Rancid Tomatillos app loads, the user will see the home page with all movies displayed. Each movie card includes the movie's cover photo, title, and Rancid Tomatillo rating.
 
-View all movies:
+**Homepage:**
 
-<img src="https://media.giphy.com/media/e32glxOhqPCLu8kbQ0/giphy.gif" width="80%">
+<img src="https://media.giphy.com/media/e32glxOhqPCLu8kbQ0/giphy-downsized.gif" width="80%">
 
 When a user clicks on a movie card, they are brought to a new page that displays additional details for that movie. If data is missing for a movie's details, a message is shown letting users know that information is unavailable. The user can click the "back" button to navigate back to the home page and view all movies.
 
-Homepage view:
+**View a movie's details page:**
 
-<img src="https://media.giphy.com/media/e32glxOhqPCLu8kbQ0/giphy.gif" width="80%">
+<img src="https://media.giphy.com/media/4dCXu15rJKMNfmyh57/giphy-downsized.gif" width="80%">
 
 A user can login to their account by clicking the "login" button from any page on the site. A login modal will appear and the user can enter their credentials. If an incorrect email or password is entered, the user is shown an error message letting them know what went wrong. If the credentials are correct, the user is now logged in to their account and is brought back to the page they were previously on.
 
 When logged in, the user has the option to add a rating using the stars on a movie's details page. The user can change their rating as many times as they'd like.
 
-Login from home page:
+**Login from home page:**
 
 <img src="https://media.giphy.com/media/ofXv8RsfrFU5P4YrOg/giphy.gif" width="80%">
 
-Login from a movie details page:
+**Login from a movie details page:**
 
 <img src="https://media.giphy.com/media/ZER1jtSlMzDCUMqLsM/giphy.gif" width="80%">
 
-Login error:
+**Login error:**
 
  <img src="https://media.giphy.com/media/dUyRyYLXv4knvZpVLd/giphy.gif" width="80%">
 
 If an error occurs when trying to access the app, the user is shown an error modal letting them know what went wrong. If there is a 500 error, the user is asked to come back later. For all other errors, the user is shown the error message as well as a link back to the Rancid Tomatillos homepage. For example, if the user enters an incorrect url for a movie details page, they are shown a 404 error and can follow the link back to the home page.
 
-Error handling:
+**Error handling:**
 
  <img src="https://media.giphy.com/media/R12a4a1e8wXB3mxQls/giphy.gif" width="80%">
 
