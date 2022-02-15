@@ -3,15 +3,14 @@ import { Link } from 'react-router-dom';
 import './ErrorModal.scss';
 
 const ErrorModal = ({error}) => {
-  console.log(typeof error)
   return(
     <div className='error-modal'>
-      <p className='modal-content'>
-        {error}
-        {!error.includes('500') && <Link to='/'>Take me to the Rotten Tomatillos home page</Link>}
-      </p>
+      <div className='modal-content'>
+        <p className='error-message'>{error}</p>
+        {!error.includes('500') && <Link to='/'>Take me to the Rancid Tomatillos home page</Link>}
+      </div>
     </div>
-  )
+  );
 }
 
-export default ErrorModal
+export default ErrorModal;

@@ -8,3 +8,7 @@
 .modal-content {
   @include modal-content();
 }
+
+.error-message {
+  margin-bottom: 20px;
+}

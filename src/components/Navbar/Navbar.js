@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navbar.scss';
-import tomatillo from '../../assets/tomatillo.svg'
+import tomatillo from '../../assets/tomatillo.svg';
 
 const Navbar = ({ name, toggleLogin, logoutUser }) => {
   const loginButton = !name &&
@@ -13,7 +13,9 @@ const Navbar = ({ name, toggleLogin, logoutUser }) => {
     <button
       className='logout-button'
       onClick={() => logoutUser()}
-    >LOGOUT</button>
+    >
+      LOGOUT
+    </button>
 
   const userName = name && <h2 className='user-greeting'>Hello, {name}!</h2>
 
@@ -22,7 +24,8 @@ const Navbar = ({ name, toggleLogin, logoutUser }) => {
       <div className='logo-container'>
         <img
           className='logo'
-          src={tomatillo} alt='tomitillo'/>
+          src={tomatillo} alt='tomitillo'
+        />
         <h1>Rancid Tomatillos</h1>
       </div>
       <div className='logout'>
@@ -31,7 +34,7 @@ const Navbar = ({ name, toggleLogin, logoutUser }) => {
         {logoutButton}
       </div>
     </nav>
-  )
+  );
 }
 
 export default Navbar;

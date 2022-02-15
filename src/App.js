@@ -21,34 +21,33 @@ class App extends Component {
   toggleLogin = () => {
     this.setState(prevState => ({
       showLogin: !prevState.showLogin
-    }))
+    }));
   }
 
   logoutUser = () => {
     this.setState({
       name: null,
       userId: null
-    })
+    });
   }
 
   loginUser = (email, password) => {
     api.postUser(email, password)
-    .then(response => {
-      if(response.error) {
-        this.setState({errorMessage: response.error})
-      } else {
-        this.setState({
-        name: response.user.name,
-        userId: response.user.id,
-        errorMessage: null,
-        showLogin: false
-      })}
-    })
-    .catch(error => console.log(error))
+      .then(response => {
+        if(response.error) {
+          this.setState({errorMessage: response.error})
+        } else {
+          this.setState({
+          name: response.user.name,
+          userId: response.user.id,
+          errorMessage: null,
+          showLogin: false
+        })}
+      })
+      .catch(error => console.log(error))
   }
 
   render() {
-
     const loginModal = this.state.showLogin &&
       <Login
         loginUser={this.loginUser}
@@ -58,20 +57,20 @@ class App extends Component {
 
     return (
       <>
-      <Navbar
-        name={ this.state.name }
-        toggleLogin={ this.toggleLogin }
-        logoutUser={ this.logoutUser }
-      />
-      {loginModal}
-      <Switch>
-      <Route exact path='/' component={ AllMovies } />
-      <Route path='/:id'
-        render={({ match }) => (
-          <SingleMovie userId={this.state.userId} id={match.params.id}/>
-        )}
-      />
-      </Switch>
+        <Navbar
+          name={ this.state.name }
+          toggleLogin={ this.toggleLogin }
+          logoutUser={ this.logoutUser }
+        />
+        {loginModal}
+        <Switch>
+          <Route exact path='/' component={ AllMovies } />
+          <Route path='/:id'
+            render={({ match }) => (
+              <SingleMovie userId={this.state.userId} id={match.params.id}/>
+            )}
+          />
+        </Switch>
       </>
     );
   }

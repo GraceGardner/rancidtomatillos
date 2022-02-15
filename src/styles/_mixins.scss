@@ -26,9 +26,9 @@
   border: 1px solid #888;
   width: 30%;
   height: 35%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  @include flex-column();
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
 }
 

@@ -20,9 +20,9 @@ const api = {
 
   getSingleMovie(id) {
     return api.get(`movies/${id}`)
-    .then(data => {
-      return cleanData(data.movie)
-    })
+      .then(data => {
+        return cleanData(data.movie)
+      })
   },
 
   getAllMovies() {
@@ -35,12 +35,15 @@ const api = {
   postUser(userEmail, userPassword) {
     return fetch('https://rancid-tomatillos.herokuapp.com/api/v2/login', {
       method: 'post',
-      body: JSON.stringify({email: `${userEmail}`, password: `${userPassword}`}),
+      body: JSON.stringify({
+        email: `${userEmail}`,
+        password: `${userPassword}`
+      }),
       headers: {
         'Content-Type': 'application/json'
       }
     })
-    .then(response => response.json())
+      .then(response => response.json())
   },
 
   getRatings() {
@@ -56,8 +59,8 @@ const api = {
         'Content-Type': 'application/json'
       }
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
+      .then(response => response.json())
+      .then(data => console.log(data))
   }
 };
 

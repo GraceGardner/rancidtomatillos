@@ -1,6 +1,6 @@
 describe('Login user flow', () => {
 
-it('should allow a user to login and then update and view movie ratings',() =>  {
+  it('should allow a user to login and then update and view movie ratings',() =>  {
     cy.intercept('post','https://rancid-tomatillos.herokuapp.com/api/v2/login',
     {
       "user": {
@@ -9,6 +9,7 @@ it('should allow a user to login and then update and view movie ratings',() =>  
         "email": "ken@turing.io"
       }
     })
+
     cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies/*', { fixture: 'movie.json'})
 
     cy.visit('http://localhost:3000')
@@ -16,17 +17,17 @@ it('should allow a user to login and then update and view movie ratings',() =>  
       .should('have.text', 'LOGIN')
       .click()
 
-      .get('input')
+    cy.get('input')
       .eq(0).type('ken@turing.io')
       .get('input')
       .eq(1).type('654321')
       .get('.sign-in-button')
       .click()
 
-      .get('.user-greeting')
+    cy.get('.user-greeting')
       .should('have.text', 'Hello, Ken!')
 
-      .get('.card').first().click()
+    cy.get('.card').first().click()
       .get('.user-rating-container')
       .get('.star')
       .eq(5)
@@ -42,7 +43,7 @@ it('should allow a user to login and then update and view movie ratings',() =>  
       .find('svg')
       .should('have.attr', 'data-prefix', 'far')
 
-      .get('.back-button').click()
+    cy.get('.back-button').click()
       .get('.card').first().click()
 
     cy.get('.star')
@@ -75,17 +76,16 @@ it('should allow a user to login and then update and view movie ratings',() =>  
       .get('.error-message')
       .should('have.text', 'Username or password is incorrect')
 
-      .get('.sign-in-button').click()
+    cy.get('.sign-in-button').click()
       .get('.error-message')
       .should('have.text', 'You are missing a required parameter of email')
 
-      .get('input')
+    cy.get('input')
       .eq(0).type('ken@turin.io')
       .get('.sign-in-button').click()
       .get('.error-message')
       .should('have.text', 'You are missing a required parameter of password')
 
-      .get('.close-button').click()
-  })
-
-})
+    cy.get('.close-button').click()
+  });
+});

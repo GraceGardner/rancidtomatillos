@@ -1,4 +1,5 @@
 describe('Rancid Tomatillos landing page', () => {
+
   it('should show a landing page with a nav bar, title, and a card for each movie with that movies details', () => {
     cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies.json'})
     cy.visit('http://localhost:3000');
