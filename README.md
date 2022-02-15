@@ -1,72 +1,72 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-:-)
+## Table of Contents   
+  - [Abstract](#abstract)
+  - [Project Goals](#project-goals)
+  - [Challenges](#challenges)   
+  - [Project Specs](#project-specs)   
+  - [Install & Setup](#set-up)
+  - [Deployed Site](#deployed-site)
+  - [api](#api)   
+  - [Tech Stack](#tech-stack)  
+  - [Contributors](#contributors)   
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Abstract
+Welcome to Rancid Tomatillos! This is a web app that displays movies, their Rancid Tomatillo rating, and a detailed description of each movie. Users can login to add their own rating to each movie.
 
-## Available Scripts
+## Project Goals
 
-In the project directory, you can run:
+- Gain competency with React fundamentals
+- Learn how to test React components & asynchronous JS
+- Practice refactoring
+- Create a multi-page UX using Router
+- Build an api using Express and deploy to Heroku
+- Learn and implement Cypress end to end testing
 
-### `npm start`
+## Challenges
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Rancid Tomatillos was built in 13 days
+- We used Express, Router and Cypress for the first time
+- This was also our first time deploying to Heroku
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Specs
+When the Rancid Tomatillos app loads, the user will see the home page with all movies displayed. Each movie card includes the movie's cover photo, title, and Rancid Tomatillo rating.
 
-### `npm test`
+When a user clicks on a movie card, they are brought to a new page that displays additional details for that movie.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Future Iterations
+- search bar
+- filter/sort
+- show user rating on movie card on home page
+- use a database to store user ratings data so that it persists beyond one session
+- additional error handling for login modal (hide error message when a user clicks back into the input, do not clear inputs, etc)
 
-### `npm run build`
+## Deployed Site
+View app in your browser by visiting : https://rancidtomatillos2110.herokuapp.com/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
+To run locally
+In your terminal run:
+git clone git@github.com:GraceGardner/rancidtomatillos.git
+cd rancidtomatillos
+npm install
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Rancid Tomatillos will run in your browser on localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## api
+For this project we access data from two api's. Movie and user data is accessed via the following api, built by staff at Turing.
 
-### `npm run eject`
+[Movie Data api](https://rancid-tomatillos.herokuapp.com/api/v1)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+We used Express to build an api that stores all user ratings. See both the api link and repo below.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[User Ratings api repo](https://github.com/aliroemhildt/user-ratings-api)
+[User Ratings api](https://user-ratings-api.herokuapp.com/api/v1/ratings)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Tech Stack
+JavaScript, React, Router, SCSS, Express, Cypress
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributors
+[Ali Roemhildt](https://github.com/aliroemhildt)
+[Grace Gardner](https://github.com/GraceGardner)
