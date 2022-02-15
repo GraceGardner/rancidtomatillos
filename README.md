@@ -6,15 +6,15 @@ View the deployed site [here](https://rancidtomatillos2110.herokuapp.com/)!
 
 ## Table of Contents   
 
-  - [Abstract](#abstract)
-  - [Project Goals](#project-goals)
-  - [Challenges](#challenges)   
-  - [Project Specs](#project-specs)   
-  - [Install & Setup](#set-up)
-  - [Deployed Site](#deployed-site)
-  - [api](#api)   
-  - [Tech Stack](#tech-stack)  
-  - [Contributors](#contributors)   
+- [Abstract](#abstract)
+- [Project Goals](#project-goals)
+- [Project Specs](#project-specs)
+- [Challenges](#challenges)
+- [Future Iterations](#future-iterations)
+- [Install & Setup](#set-up)
+- [api](#api)
+- [Tech Stack](#tech-stack)
+- [Contributors](#contributors)
 
 ## Abstract
 
@@ -76,7 +76,7 @@ Error handling:
 - Refining the error handling on the login modal (hiding the error message when a user clicks back into the input, do not clear inputs, etc)
 - Add the ability for a user to delete their rating from a movie
 
-## Installation and Setup
+## Install & Setup
 
 To run this app locally:
 
@@ -102,11 +102,15 @@ Our team gave ourselves the challenge to learn and implement Express to build an
 [User Ratings api](https://user-ratings-api.herokuapp.com/api/v1/ratings)
 
 ## Tech Stack
-- React
-- React Router
-- SCSS
-- Express
-- Cypress
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+
+![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
 
 
 ## Contributors
