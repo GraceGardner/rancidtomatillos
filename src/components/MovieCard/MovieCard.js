@@ -19,6 +19,7 @@ const MovieCard = ({image, title, id, selectMovie, rating}) => {
         <img
           className='tomatillo'
           src={tomatillo}
+          alt='tomatillo icon'
         />
         {rating.toFixed(1)}
       </p>
