@@ -64,7 +64,7 @@ class SingleMovie extends Component {
 
   setRating = (rating) => {
     api.postRating({
-      user_id: this.state.userId,
+      user_id: parseInt(this.state.userId),
       movie_id: parseInt(this.state.id),
       rating: parseInt(rating)
     })
