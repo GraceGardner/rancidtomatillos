@@ -71,8 +71,8 @@ If an error occurs when trying to access the app, the user is shown an error mod
 ## Challenges
 
 - This app was built in the short time span of 13 days.
-- This was our team's first time implementing React Router, Cypress, and Express, and deploying to Heroku. Each of these new technologies came with a learning curve and many hours of research.
-- Following the project spec, our team first built out this React app using conditional rendering. Once complete, we then refactored the app using Router to replace the conditional rendering. Refactoring with Router seemed to bring more challenges and complications than if we had implemented it from the beginning.
+- This was our team's first time implementing React Router, Cypress, Express, and deploying to Heroku. Each of these new technologies came with a learning curve and many hours of research.
+- Following the project spec, our team first built out this React app using conditional rendering. Once complete, we then refactored the app using Router to replace the conditional rendering. Refactoring with Router, rather than implementing it from the beginning, seemed to bring additional challenges and complications.
 - The api's that are provided for this app are missing information, so the team had to utilize data cleaning and extensive error handling to account for each scenario.
 
 ## Future Iterations
