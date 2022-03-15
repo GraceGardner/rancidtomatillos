@@ -46,7 +46,7 @@ h1 {
 
 @media screen and (max-width: 800px) {
   h1 {
-    font-size: 30px
+    font-size: 40px
   }
 
   .logo {
@@ -58,4 +58,15 @@ h1 {
     font-size: 12px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 30px
+  }
+
+  .logo {
+    height: 50px;
+  }
+}
+
 
